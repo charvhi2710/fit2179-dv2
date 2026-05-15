@@ -1,0 +1,107 @@
+/* ===== FIT2179 DV2 — Violent Crime in Malaysia ===== */
+
+body * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.page {
+  max-width: 1100px;
+  background-color: white;
+  margin: auto;
+  padding: 50px 60px;
+}
+
+/* ===== TYPOGRAPHY HIERARCHY (course-aligned) ===== */
+
+h1 {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+  max-width: 18ch;
+}
+
+.lede {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 30px 0;
+  max-width: 55ch;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 30px;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  max-width: 30ch;
+}
+
+.section-number {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b03a2e;          /* warm rust — STRUCTURAL ONLY (not for chart data) */
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1a1a1a;
+  max-width: 56ch;        /* tighter — keeps lines at ~9–12 words */
+  margin: 0 0 16px 0;
+}
+
+a {
+  color: #b03a2e;
+}
+
+/* ===== LAYOUT ===== */
+
+.pure-g {
+  margin-bottom: 40px;       /* breathing room between sections */
+}
+
+.vis-container {
+  width: 100%;
+  min-height: 300px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.description-right {
+  padding-left: 20px;
+}
+
+.description-left {
+  padding-right: 20px;
+}
+
+/* ===== FOOTER ===== */
+
+.small-font {
+  font-size: 13px;
+  color: #888;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 20px;
+  margin-top: 40px;
+}
+
+.small-font a {
+  color: #888;
+  text-decoration: underline;
+}
