@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Violent Crime in Malaysia | FIT2179</title>
+
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group: header -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Violent Crime in Malaysia</h1>
+        <p class="lede">Where the cases sit, where the risk sits, and what those places have in common.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group: section 1 (placeholder) -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">01 &mdash; Setting the scene</span>
+        <h2>What we mean by &ldquo;violent crime&rdquo;</h2>
+        <p>Violent crime is not one thing. It includes the everyday property losses that empty out a wallet, and the rarer, deeper violations that reach into a person directly. The Royal Malaysia Police records both, across every district in the country.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group: first chart placeholder (replace later with the rate map) -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group: footer -->
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>By Charvhi A/P L. Ramesh &middot; ID 35646837 &middot; FIT2179 Data Visualisation 2 &middot; May 2026<br>
+        Data sources:
+        <a href="https://data.gov.my/data-catalogue/crime_district" target="_blank">data.gov.my (PDRM)</a>,
+        <a href="https://open.dosm.gov.my/data-catalogue/population_state" target="_blank">open.dosm.gov.my (DOSM)</a>.</p>
+      </div>
+    </div>
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    // Chart specs will be added here as you build them
+    // Example pattern (uncomment when the first chart spec exists):
+    // var specVis1 = "./js/rate_map.vg.json";
+    // vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+    //   // Vega view instance available as result.view
+    // }).catch(console.error);
+  </script>
+
+</body>
+
+</html>
