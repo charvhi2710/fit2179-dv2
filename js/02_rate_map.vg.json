@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where the risk sits — violent crime rate per 100,000",
+    "subtitle": "The same country, the same crimes, a different question.",
+    "anchor": "start",
+    "offset": 12,
+    "fontSize": 17,
+    "font": "Open Sans",
+    "fontWeight": 700,
+    "subtitleFontSize": 13,
+    "subtitleFont": "Open Sans",
+    "subtitleColor": "#666",
+    "subtitlePadding": 4
+  },
+  "width": "container",
+  "height": 420,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "projection": {
+    "type": "mercator",
+    "center": [108, 4],
+    "scale": 2400
+  },
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8f0f4",
+        "stroke": null
+      }
+    },
+    {
+      "data": {"graticule": {"step": [5, 5]}},
+      "mark": {
+        "type": "geoshape",
+        "filled": false,
+        "stroke": "#fff",
+        "strokeWidth": 0.7,
+        "strokeOpacity": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f5f3ee",
+        "stroke": "#d8d4cb",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia-states.topojson",
+        "format": {"type": "topojson", "feature": "states"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.Name",
+          "from": {
+            "data": {"url": "data/analysis_state_2023.json"},
+            "key": "state",
+            "fields": ["rate_per_100k", "violent_crimes", "population", "rank_by_rate"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#fff",
+        "strokeWidth": 0.7
+      },
+      "encoding": {
+        "color": {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "blues",
+            "domainMin": 0
+          },
+          "legend": {
+            "title": "Rate per 100,000 residents",
+            "titleFont": "Open Sans",
+            "labelFont": "Open Sans",
+            "titleFontSize": 11,
+            "labelFontSize": 10,
+            "orient": "bottom-left",
+            "gradientLength": 180,
+            "gradientThickness": 10
+          }
+        },
+        "tooltip": [
+          {"field": "properties.Name", "title": "State"},
+          {"field": "rate_per_100k", "title": "Rate per 100k", "format": ".1f"},
+          {"field": "violent_crimes", "title": "Total cases", "format": ","},
+          {"field": "population", "title": "Population", "format": ","},
+          {"field": "rank_by_rate", "title": "Rank by rate"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Open Sans"
+  }
+}
