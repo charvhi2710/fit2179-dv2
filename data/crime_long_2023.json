@@ -1,1010 +1,1010 @@
 [
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":366
+    "state": "Johor",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 366
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"murder",
-    "crimes":31
+    "state": "Johor",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 31
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"rape",
-    "crimes":194
+    "state": "Johor",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 194
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Johor",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":394
+    "state": "Johor",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 394
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Johor",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Johor",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":243
+    "state": "Johor",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 243
   },
   {
-    "state":"Johor",
-    "category":"property",
-    "type":"break_in",
-    "crimes":993
+    "state": "Johor",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 993
   },
   {
-    "state":"Johor",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1335
+    "state": "Johor",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1335
   },
   {
-    "state":"Johor",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":69
+    "state": "Johor",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 69
   },
   {
-    "state":"Johor",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":415
+    "state": "Johor",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 415
   },
   {
-    "state":"Johor",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":1290
+    "state": "Johor",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 1290
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":260
+    "state": "Kedah",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 260
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"murder",
-    "crimes":19
+    "state": "Kedah",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 19
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"rape",
-    "crimes":184
+    "state": "Kedah",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 184
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Kedah",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":137
+    "state": "Kedah",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 137
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Kedah",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Kedah",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":120
+    "state": "Kedah",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 120
   },
   {
-    "state":"Kedah",
-    "category":"property",
-    "type":"break_in",
-    "crimes":1353
+    "state": "Kedah",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 1353
   },
   {
-    "state":"Kedah",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1295
+    "state": "Kedah",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1295
   },
   {
-    "state":"Kedah",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":40
+    "state": "Kedah",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 40
   },
   {
-    "state":"Kedah",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":198
+    "state": "Kedah",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 198
   },
   {
-    "state":"Kedah",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":961
+    "state": "Kedah",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 961
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":147
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 147
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"murder",
-    "crimes":9
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 9
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"rape",
-    "crimes":130
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 130
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":5
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 5
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":43
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 43
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Kelantan",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":56
+    "state": "Kelantan",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 56
   },
   {
-    "state":"Kelantan",
-    "category":"property",
-    "type":"break_in",
-    "crimes":443
+    "state": "Kelantan",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 443
   },
   {
-    "state":"Kelantan",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":485
+    "state": "Kelantan",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 485
   },
   {
-    "state":"Kelantan",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":9
+    "state": "Kelantan",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 9
   },
   {
-    "state":"Kelantan",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":128
+    "state": "Kelantan",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 128
   },
   {
-    "state":"Kelantan",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":539
+    "state": "Kelantan",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 539
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":108
+    "state": "Melaka",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 108
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"murder",
-    "crimes":13
+    "state": "Melaka",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 13
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"rape",
-    "crimes":76
+    "state": "Melaka",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 76
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Melaka",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":74
+    "state": "Melaka",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 74
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Melaka",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Melaka",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":39
+    "state": "Melaka",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 39
   },
   {
-    "state":"Melaka",
-    "category":"property",
-    "type":"break_in",
-    "crimes":428
+    "state": "Melaka",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 428
   },
   {
-    "state":"Melaka",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":429
+    "state": "Melaka",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 429
   },
   {
-    "state":"Melaka",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":7
+    "state": "Melaka",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 7
   },
   {
-    "state":"Melaka",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":53
+    "state": "Melaka",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 53
   },
   {
-    "state":"Melaka",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":230
+    "state": "Melaka",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 230
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":152
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 152
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"murder",
-    "crimes":8
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 8
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"rape",
-    "crimes":63
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 63
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":130
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 130
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":1
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 1
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":63
+    "state": "Negeri Sembilan",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 63
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"property",
-    "type":"break_in",
-    "crimes":398
+    "state": "Negeri Sembilan",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 398
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":643
+    "state": "Negeri Sembilan",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 643
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":27
+    "state": "Negeri Sembilan",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 27
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":79
+    "state": "Negeri Sembilan",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 79
   },
   {
-    "state":"Negeri Sembilan",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":331
+    "state": "Negeri Sembilan",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 331
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":168
+    "state": "Pahang",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 168
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"murder",
-    "crimes":5
+    "state": "Pahang",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 5
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"rape",
-    "crimes":119
+    "state": "Pahang",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 119
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Pahang",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":63
+    "state": "Pahang",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 63
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Pahang",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Pahang",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":54
+    "state": "Pahang",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 54
   },
   {
-    "state":"Pahang",
-    "category":"property",
-    "type":"break_in",
-    "crimes":387
+    "state": "Pahang",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 387
   },
   {
-    "state":"Pahang",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":570
+    "state": "Pahang",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 570
   },
   {
-    "state":"Pahang",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":24
+    "state": "Pahang",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 24
   },
   {
-    "state":"Pahang",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":99
+    "state": "Pahang",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 99
   },
   {
-    "state":"Pahang",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":386
+    "state": "Pahang",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 386
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":334
+    "state": "Perak",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 334
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"murder",
-    "crimes":30
+    "state": "Perak",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 30
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"rape",
-    "crimes":114
+    "state": "Perak",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 114
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":1
+    "state": "Perak",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 1
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":222
+    "state": "Perak",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 222
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Perak",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Perak",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":151
+    "state": "Perak",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 151
   },
   {
-    "state":"Perak",
-    "category":"property",
-    "type":"break_in",
-    "crimes":835
+    "state": "Perak",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 835
   },
   {
-    "state":"Perak",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1070
+    "state": "Perak",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1070
   },
   {
-    "state":"Perak",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":27
+    "state": "Perak",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 27
   },
   {
-    "state":"Perak",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":194
+    "state": "Perak",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 194
   },
   {
-    "state":"Perak",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":594
+    "state": "Perak",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 594
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":24
+    "state": "Perlis",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 24
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"murder",
-    "crimes":3
+    "state": "Perlis",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 3
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"rape",
-    "crimes":28
+    "state": "Perlis",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 28
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":1
+    "state": "Perlis",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 1
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":9
+    "state": "Perlis",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 9
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Perlis",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Perlis",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":10
+    "state": "Perlis",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 10
   },
   {
-    "state":"Perlis",
-    "category":"property",
-    "type":"break_in",
-    "crimes":94
+    "state": "Perlis",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 94
   },
   {
-    "state":"Perlis",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":115
+    "state": "Perlis",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 115
   },
   {
-    "state":"Perlis",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":0
+    "state": "Perlis",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 0
   },
   {
-    "state":"Perlis",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":4
+    "state": "Perlis",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 4
   },
   {
-    "state":"Perlis",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":51
+    "state": "Perlis",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 51
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":333
+    "state": "Penang",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 333
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"murder",
-    "crimes":12
+    "state": "Penang",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 12
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"rape",
-    "crimes":98
+    "state": "Penang",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 98
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":1
+    "state": "Penang",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 1
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":193
+    "state": "Penang",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 193
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":0
+    "state": "Penang",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 0
   },
   {
-    "state":"Pulau Pinang",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":183
+    "state": "Penang",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 183
   },
   {
-    "state":"Pulau Pinang",
-    "category":"property",
-    "type":"break_in",
-    "crimes":745
+    "state": "Penang",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 745
   },
   {
-    "state":"Pulau Pinang",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1181
+    "state": "Penang",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1181
   },
   {
-    "state":"Pulau Pinang",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":31
+    "state": "Penang",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 31
   },
   {
-    "state":"Pulau Pinang",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":153
+    "state": "Penang",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 153
   },
   {
-    "state":"Pulau Pinang",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":674
+    "state": "Penang",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 674
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":176
+    "state": "Sabah",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 176
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"murder",
-    "crimes":26
+    "state": "Sabah",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 26
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"rape",
-    "crimes":225
+    "state": "Sabah",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 225
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":2
+    "state": "Sabah",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 2
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":48
+    "state": "Sabah",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 48
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":1
+    "state": "Sabah",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 1
   },
   {
-    "state":"Sabah",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":56
+    "state": "Sabah",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 56
   },
   {
-    "state":"Sabah",
-    "category":"property",
-    "type":"break_in",
-    "crimes":1370
+    "state": "Sabah",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 1370
   },
   {
-    "state":"Sabah",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1699
+    "state": "Sabah",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1699
   },
   {
-    "state":"Sabah",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":35
+    "state": "Sabah",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 35
   },
   {
-    "state":"Sabah",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":103
+    "state": "Sabah",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 103
   },
   {
-    "state":"Sabah",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":376
+    "state": "Sabah",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 376
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":251
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 251
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"murder",
-    "crimes":13
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 13
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"rape",
-    "crimes":121
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 121
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":5
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 5
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":114
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 114
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":2
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 2
   },
   {
-    "state":"Sarawak",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":52
+    "state": "Sarawak",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 52
   },
   {
-    "state":"Sarawak",
-    "category":"property",
-    "type":"break_in",
-    "crimes":960
+    "state": "Sarawak",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 960
   },
   {
-    "state":"Sarawak",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1390
+    "state": "Sarawak",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1390
   },
   {
-    "state":"Sarawak",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":56
+    "state": "Sarawak",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 56
   },
   {
-    "state":"Sarawak",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":259
+    "state": "Sarawak",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 259
   },
   {
-    "state":"Sarawak",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":822
+    "state": "Sarawak",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 822
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":951
+    "state": "Selangor",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 951
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"murder",
-    "crimes":67
+    "state": "Selangor",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 67
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"rape",
-    "crimes":375
+    "state": "Selangor",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 375
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":10
+    "state": "Selangor",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 10
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":866
+    "state": "Selangor",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 866
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":7
+    "state": "Selangor",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 7
   },
   {
-    "state":"Selangor",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":677
+    "state": "Selangor",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 677
   },
   {
-    "state":"Selangor",
-    "category":"property",
-    "type":"break_in",
-    "crimes":2713
+    "state": "Selangor",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 2713
   },
   {
-    "state":"Selangor",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":3793
+    "state": "Selangor",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 3793
   },
   {
-    "state":"Selangor",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":350
+    "state": "Selangor",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 350
   },
   {
-    "state":"Selangor",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":1032
+    "state": "Selangor",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 1032
   },
   {
-    "state":"Selangor",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":2898
+    "state": "Selangor",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 2898
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":111
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 111
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"murder",
-    "crimes":6
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 6
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"rape",
-    "crimes":86
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 86
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":0
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 0
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":25
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 25
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":1
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 1
   },
   {
-    "state":"Terengganu",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":18
+    "state": "Terengganu",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 18
   },
   {
-    "state":"Terengganu",
-    "category":"property",
-    "type":"break_in",
-    "crimes":385
+    "state": "Terengganu",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 385
   },
   {
-    "state":"Terengganu",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":469
+    "state": "Terengganu",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 469
   },
   {
-    "state":"Terengganu",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":10
+    "state": "Terengganu",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 10
   },
   {
-    "state":"Terengganu",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":26
+    "state": "Terengganu",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 26
   },
   {
-    "state":"Terengganu",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":233
+    "state": "Terengganu",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 233
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"causing_injury",
-    "crimes":312
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "causing_injury",
+    "crimes": 312
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"murder",
-    "crimes":16
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "murder",
+    "crimes": 16
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"rape",
-    "crimes":101
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "rape",
+    "crimes": 101
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"robbery_gang_armed",
-    "crimes":5
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "robbery_gang_armed",
+    "crimes": 5
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"robbery_gang_unarmed",
-    "crimes":260
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "robbery_gang_unarmed",
+    "crimes": 260
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"robbery_solo_armed",
-    "crimes":1
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "robbery_solo_armed",
+    "crimes": 1
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"assault",
-    "type":"robbery_solo_unarmed",
-    "crimes":245
+    "state": "Kuala Lumpur",
+    "category": "assault",
+    "type": "robbery_solo_unarmed",
+    "crimes": 245
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"property",
-    "type":"break_in",
-    "crimes":453
+    "state": "Kuala Lumpur",
+    "category": "property",
+    "type": "break_in",
+    "crimes": 453
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"property",
-    "type":"theft_other",
-    "crimes":1363
+    "state": "Kuala Lumpur",
+    "category": "property",
+    "type": "theft_other",
+    "crimes": 1363
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"property",
-    "type":"theft_vehicle_lorry",
-    "crimes":79
+    "state": "Kuala Lumpur",
+    "category": "property",
+    "type": "theft_vehicle_lorry",
+    "crimes": 79
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"property",
-    "type":"theft_vehicle_motorcar",
-    "crimes":502
+    "state": "Kuala Lumpur",
+    "category": "property",
+    "type": "theft_vehicle_motorcar",
+    "crimes": 502
   },
   {
-    "state":"W.P. Kuala Lumpur",
-    "category":"property",
-    "type":"theft_vehicle_motorcycle",
-    "crimes":1203
+    "state": "Kuala Lumpur",
+    "category": "property",
+    "type": "theft_vehicle_motorcycle",
+    "crimes": 1203
   }
 ]

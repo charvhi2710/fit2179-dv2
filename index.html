@@ -28,16 +28,15 @@
 
   <div class="page">
 
-    <!-- pure grid group: header -->
+    <!-- ===== HEADER ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Violent Crime in Malaysia</h1>
         <p class="lede">Where the cases sit, where the risk sits, and what those places have in common.</p>
       </div>
     </div>
-    <!-- end pure grid group -->
 
-    <!-- pure grid group: section 1 (placeholder) -->
+    <!-- ===== SECTION 1: framing intro ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <span class="section-number">01 &mdash; Setting the scene</span>
@@ -45,17 +44,48 @@
         <p>Violent crime is not one thing. It includes the everyday property losses that empty out a wallet, and the rarer, deeper violations that reach into a person directly. The Royal Malaysia Police records both, across every district in the country.</p>
       </div>
     </div>
-    <!-- end pure grid group -->
 
-    <!-- pure grid group: first chart placeholder (replace later with the rate map) -->
+    <!-- ===== SECTION 2: Volume vs Risk (paired) ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="vis1" class="vis-container"></div>
+        <span class="section-number">02 &mdash; Volume vs risk</span>
+        <h2>Two ways to count the same country</h2>
+        <p>The most populated places carry the loudest count. But scale is not the same thing as risk &mdash; and adjusting for population reveals a different geography of harm.</p>
       </div>
     </div>
-    <!-- end pure grid group -->
 
-    <!-- pure grid group: footer -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="chart-caption">VOLUME &mdash; raw cases</div>
+        <div id="vis1" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="chart-caption">RISK &mdash; rate per 100,000</div>
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 3: The flip (full width hero) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">03 &mdash; The flip, made visible</span>
+        <h2>When the question changes, the ranking flips</h2>
+        <p>If volume tells one story and risk tells another, the cleanest way to see it is side by side. On the left, every state is ranked by how many cases were recorded. On the right, by how often a case touches one in every hundred thousand residents. Two states do something dramatic.</p>
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 4: Crime signatures (small multiples) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">04 &mdash; What kind of crime is where</span>
+        <h2>Each state has its own crime signature</h2>
+        <p>Not every state experiences the same shape of harm. Some places see crime that wears down homes and vehicles; others see crime that reaches further, into the body itself. Each state's profile tells you something about its economy, its density, and its day-to-day rhythm.</p>
+        <div id="vis4" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
         <p>By Charvhi A/P L. Ramesh &middot; ID 35646837 &middot; FIT2179 Data Visualisation 2 &middot; May 2026<br>
@@ -68,12 +98,15 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    // Chart specs will be added here as you build them
-    // Example pattern (uncomment when the first chart spec exists):
-    // var specVis1 = "./js/rate_map.vg.json";
-    // vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
-    //   // Vega view instance available as result.view
-    // }).catch(console.error);
+    var specVis1 = "./js/01_top_states_bar.vg.json";
+    var specVis2 = "./js/02_rate_map.vg.json";
+    var specVis3 = "./js/03_rank_flip.vg.json";
+    var specVis4 = "./js/04_crime_signatures.vg.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis2', specVis2, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis3', specVis3, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis4', specVis4, { "actions": false }).catch(console.error);
   </script>
 
 </body>

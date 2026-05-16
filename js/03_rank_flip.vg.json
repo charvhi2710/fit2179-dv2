@@ -13,7 +13,7 @@
     "subtitleColor": "#666",
     "subtitlePadding": 4
   },
-  "width": 520,
+  "width": "container",
   "height": 480,
   "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
   "autosize": {"type": "fit", "contains": "padding"},

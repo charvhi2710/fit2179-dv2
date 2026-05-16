@@ -1,17 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Top 6 states by raw violent crime count, 2023",
-    "subtitle": "The biggest cities carry the loudest count.",
+    "text": "The biggest cities carry the loudest count.",
     "anchor": "start",
     "offset": 12,
-    "fontSize": 17,
+    "fontSize": 13,
     "font": "Open Sans",
-    "fontWeight": 700,
-    "subtitleFontSize": 13,
-    "subtitleFont": "Open Sans",
-    "subtitleColor": "#666",
-    "subtitlePadding": 4
+    "fontWeight": 400,
+    "color": "#666"
   },
   "width": "container",
   "height": 320,
@@ -62,7 +58,8 @@
         "gridColor": "#eee",
         "domain": false,
         "ticks": false,
-        "format": ","
+        "format": ",d",
+        "tickCount": 4
       }
     },
     "tooltip": [

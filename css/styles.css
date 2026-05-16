@@ -43,7 +43,7 @@ h2 {
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 12px 0;
-  max-width: 30ch;
+  max-width: 55ch;          /* wide enough for natural single-line headings */
 }
 
 .section-number {
@@ -52,7 +52,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #b03a2e;          /* warm rust — STRUCTURAL ONLY (not for chart data) */
+  color: #1e3a5f;          /* deep navy — STRUCTURAL ONLY (not for chart data) */
   margin-bottom: 8px;
 }
 
@@ -65,22 +65,39 @@ p {
 }
 
 a {
-  color: #b03a2e;
+  color: #1e3a5f;
 }
 
 /* ===== LAYOUT ===== */
 
+/* Defensive flex on pure-g to guarantee side-by-side layout */
 .pure-g {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;       /* breathing room between sections */
+}
+
+/* Tighten gap between paired section heading and its chart row */
+.pure-g + .pure-g {
+  margin-top: -16px;
 }
 
 .vis-container {
   width: 100%;
-  min-height: 300px;
-  background: #fafafa;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  padding: 20px;
+  max-width: 720px;          /* constrain in full-width sections */
+  margin: 16px 0 0 0;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Hairline above standalone (full-width) charts */
+.pure-u-1-1 > .vis-container::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #e6e6e6;
+  margin-bottom: 24px;
 }
 
 .description-right {
@@ -104,4 +121,36 @@ a {
 .small-font a {
   color: #888;
   text-decoration: underline;
+}
+
+/* Small caption above each chart (used in paired layouts) */
+.chart-caption {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  margin: 16px 0 8px 0;
+}
+
+/* In paired layouts, give each half a bit of breathing room */
+.pure-u-1-2 .vis-container {
+  margin-top: 8px;
+  max-width: 100%;          /* override the 720px constraint when in a half column */
+}
+
+/* Explicit half-column width (defensive — Pure.css should do this) */
+.pure-u-1-2 {
+  width: 50%;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+.pure-u-1-2:last-child {
+  padding-right: 0;
+  padding-left: 12px;
+}
+
+/* Full-width column */
+.pure-u-1-1 {
+  width: 100%;
 }
