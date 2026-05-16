@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 6 states by raw violent crime count, 2023",
+    "subtitle": "The biggest cities carry the loudest count.",
+    "anchor": "start",
+    "offset": 12,
+    "fontSize": 17,
+    "font": "Open Sans",
+    "fontWeight": 700,
+    "subtitleFontSize": 13,
+    "subtitleFont": "Open Sans",
+    "subtitleColor": "#666",
+    "subtitlePadding": 4
+  },
+  "width": "container",
+  "height": 320,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "data": {
+    "url": "data/analysis_state_2023.json"
+  },
+  "transform": [
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "violent_crimes", "order": "descending"}]
+    },
+    {"filter": "datum.rank <= 6"}
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#2c3e50",
+    "tooltip": true,
+    "cornerRadiusEnd": 2
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {
+        "labelFontSize": 13,
+        "labelFont": "Open Sans",
+        "labelPadding": 8,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "x": {
+      "field": "violent_crimes",
+      "type": "quantitative",
+      "title": "Number of cases",
+      "axis": {
+        "labelFontSize": 11,
+        "labelFont": "Open Sans",
+        "titleFont": "Open Sans",
+        "titleFontSize": 12,
+        "titleColor": "#666",
+        "titlePadding": 10,
+        "grid": true,
+        "gridColor": "#eee",
+        "domain": false,
+        "ticks": false,
+        "format": ","
+      }
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "violent_crimes", "title": "Violent crime cases", "format": ","},
+      {"field": "rank_by_count", "title": "Rank by count"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
