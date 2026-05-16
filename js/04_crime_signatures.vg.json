@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Each state has its own crime signature.",
+    "subtitle": "Navy = violent (assault) crimes · Gold = property crimes. Bar lengths are scaled within each state.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#888",
+    "subtitleFont": "Open Sans",
+    "subtitlePadding": 6
+  },
+  "data": {
+    "url": "data/crime_long_2023.json"
+  },
+  "transform": [
+    {
+      "calculate": "datum.type === 'causing_injury' ? 'Causing injury' : datum.type === 'murder' ? 'Murder' : datum.type === 'rape' ? 'Rape' : indexof(datum.type, 'robbery') >= 0 ? 'Robbery' : datum.type === 'break_in' ? 'Break-in' : indexof(datum.type, 'theft_vehicle') >= 0 ? 'Vehicle theft' : datum.type === 'theft_other' ? 'Theft (other)' : datum.type",
+      "as": "type_label"
+    },
+    {
+      "aggregate": [{"op": "sum", "field": "crimes", "as": "total"}],
+      "groupby": ["state", "type_label", "category"]
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "tooltip": true,
+    "cornerRadiusEnd": 1
+  },
+  "width": 140,
+  "height": 110,
+  "encoding": {
+    "facet": {
+      "field": "state",
+      "type": "nominal",
+      "columns": 4,
+      "sort": ["Selangor", "Johor", "Kuala Lumpur", "Perak", "Penang", "Kedah", "Sarawak", "Sabah", "Negeri Sembilan", "Pahang", "Kelantan", "Melaka", "Terengganu", "Perlis"],
+      "header": {
+        "labelFontSize": 13,
+        "labelFontWeight": 700,
+        "labelColor": "#1a1a1a",
+        "labelFont": "Open Sans",
+        "title": null,
+        "labelAnchor": "start",
+        "labelPadding": 4
+      }
+    },
+    "y": {
+      "field": "type_label",
+      "type": "nominal",
+      "sort": ["Causing injury", "Murder", "Rape", "Robbery", "Break-in", "Vehicle theft", "Theft (other)"],
+      "axis": {
+        "labelFontSize": 10,
+        "labelFont": "Open Sans",
+        "labelColor": "#444",
+        "title": null,
+        "domain": false,
+        "ticks": false,
+        "labelLimit": 100
+      }
+    },
+    "x": {
+      "field": "total",
+      "type": "quantitative",
+      "axis": null
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": ["assault", "property"],
+        "range": ["#1e3a5f", "#a47e1b"]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "type_label", "title": "Crime type"},
+      {"field": "total", "title": "Cases (2023)", "format": ","}
+    ]
+  },
+  "resolve": {"scale": {"x": "independent"}},
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
