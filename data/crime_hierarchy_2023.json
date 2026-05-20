@@ -1,0 +1,313 @@
+[
+  {
+    "id": "root",
+    "name": "Malaysia 2023",
+    "parent": null
+  },
+  {
+    "id": "cat:assault",
+    "name": "Assault",
+    "parent": "root",
+    "value": 10453
+  },
+  {
+    "id": "type:Causing injury",
+    "name": "Causing injury",
+    "parent": "cat:assault",
+    "value": 3693,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Causing injury:Selangor",
+    "name": "Selangor",
+    "parent": "type:Causing injury",
+    "value": 951,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Causing injury:Johor",
+    "name": "Johor",
+    "parent": "type:Causing injury",
+    "value": 366,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Causing injury:Perak",
+    "name": "Perak",
+    "parent": "type:Causing injury",
+    "value": 334,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Causing injury:Penang",
+    "name": "Penang",
+    "parent": "type:Causing injury",
+    "value": 333,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Causing injury:Kuala Lumpur",
+    "name": "Kuala Lumpur",
+    "parent": "type:Causing injury",
+    "value": 312,
+    "type": "Causing injury"
+  },
+  {
+    "id": "type:Murder",
+    "name": "Murder",
+    "parent": "cat:assault",
+    "value": 258,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Murder:Selangor",
+    "name": "Selangor",
+    "parent": "type:Murder",
+    "value": 67,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Murder:Johor",
+    "name": "Johor",
+    "parent": "type:Murder",
+    "value": 31,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Murder:Perak",
+    "name": "Perak",
+    "parent": "type:Murder",
+    "value": 30,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Murder:Sabah",
+    "name": "Sabah",
+    "parent": "type:Murder",
+    "value": 26,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Murder:Kedah",
+    "name": "Kedah",
+    "parent": "type:Murder",
+    "value": 19,
+    "type": "Murder"
+  },
+  {
+    "id": "type:Rape",
+    "name": "Rape",
+    "parent": "cat:assault",
+    "value": 1914,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Rape:Selangor",
+    "name": "Selangor",
+    "parent": "type:Rape",
+    "value": 375,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Rape:Sabah",
+    "name": "Sabah",
+    "parent": "type:Rape",
+    "value": 225,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Rape:Johor",
+    "name": "Johor",
+    "parent": "type:Rape",
+    "value": 194,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Rape:Kedah",
+    "name": "Kedah",
+    "parent": "type:Rape",
+    "value": 184,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Rape:Kelantan",
+    "name": "Kelantan",
+    "parent": "type:Rape",
+    "value": 130,
+    "type": "Rape"
+  },
+  {
+    "id": "type:Robbery",
+    "name": "Robbery",
+    "parent": "cat:assault",
+    "value": 4588,
+    "type": "Robbery"
+  },
+  {
+    "id": "type:Robbery:Selangor",
+    "name": "Selangor",
+    "parent": "type:Robbery",
+    "value": 1560,
+    "type": "Robbery"
+  },
+  {
+    "id": "type:Robbery:Johor",
+    "name": "Johor",
+    "parent": "type:Robbery",
+    "value": 637,
+    "type": "Robbery"
+  },
+  {
+    "id": "type:Robbery:Kuala Lumpur",
+    "name": "Kuala Lumpur",
+    "parent": "type:Robbery",
+    "value": 511,
+    "type": "Robbery"
+  },
+  {
+    "id": "type:Robbery:Penang",
+    "name": "Penang",
+    "parent": "type:Robbery",
+    "value": 377,
+    "type": "Robbery"
+  },
+  {
+    "id": "type:Robbery:Perak",
+    "name": "Perak",
+    "parent": "type:Robbery",
+    "value": 374,
+    "type": "Robbery"
+  },
+  {
+    "id": "cat:property",
+    "name": "Property",
+    "parent": "root",
+    "value": 41991
+  },
+  {
+    "id": "type:Break-in",
+    "name": "Break-in",
+    "parent": "cat:property",
+    "value": 11557,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Break-in:Selangor",
+    "name": "Selangor",
+    "parent": "type:Break-in",
+    "value": 2713,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Break-in:Sabah",
+    "name": "Sabah",
+    "parent": "type:Break-in",
+    "value": 1370,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Break-in:Kedah",
+    "name": "Kedah",
+    "parent": "type:Break-in",
+    "value": 1353,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Break-in:Johor",
+    "name": "Johor",
+    "parent": "type:Break-in",
+    "value": 993,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Break-in:Sarawak",
+    "name": "Sarawak",
+    "parent": "type:Break-in",
+    "value": 960,
+    "type": "Break-in"
+  },
+  {
+    "id": "type:Theft (other)",
+    "name": "Theft (other)",
+    "parent": "cat:property",
+    "value": 15837,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Theft (other):Selangor",
+    "name": "Selangor",
+    "parent": "type:Theft (other)",
+    "value": 3793,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Theft (other):Sabah",
+    "name": "Sabah",
+    "parent": "type:Theft (other)",
+    "value": 1699,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Theft (other):Sarawak",
+    "name": "Sarawak",
+    "parent": "type:Theft (other)",
+    "value": 1390,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Theft (other):Kuala Lumpur",
+    "name": "Kuala Lumpur",
+    "parent": "type:Theft (other)",
+    "value": 1363,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Theft (other):Johor",
+    "name": "Johor",
+    "parent": "type:Theft (other)",
+    "value": 1335,
+    "type": "Theft (other)"
+  },
+  {
+    "id": "type:Vehicle theft",
+    "name": "Vehicle theft",
+    "parent": "cat:property",
+    "value": 14597,
+    "type": "Vehicle theft"
+  },
+  {
+    "id": "type:Vehicle theft:Selangor",
+    "name": "Selangor",
+    "parent": "type:Vehicle theft",
+    "value": 4280,
+    "type": "Vehicle theft"
+  },
+  {
+    "id": "type:Vehicle theft:Kuala Lumpur",
+    "name": "Kuala Lumpur",
+    "parent": "type:Vehicle theft",
+    "value": 1784,
+    "type": "Vehicle theft"
+  },
+  {
+    "id": "type:Vehicle theft:Johor",
+    "name": "Johor",
+    "parent": "type:Vehicle theft",
+    "value": 1774,
+    "type": "Vehicle theft"
+  },
+  {
+    "id": "type:Vehicle theft:Kedah",
+    "name": "Kedah",
+    "parent": "type:Vehicle theft",
+    "value": 1199,
+    "type": "Vehicle theft"
+  },
+  {
+    "id": "type:Vehicle theft:Sarawak",
+    "name": "Sarawak",
+    "parent": "type:Vehicle theft",
+    "value": 1137,
+    "type": "Vehicle theft"
+  }
+]

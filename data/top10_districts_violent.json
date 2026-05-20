@@ -1,0 +1,52 @@
+[
+  {
+    "state":"Perak",
+    "district":"Ipoh",
+    "violent_crimes":373
+  },
+  {
+    "state":"Selangor",
+    "district":"Gombak",
+    "violent_crimes":370
+  },
+  {
+    "state":"Selangor",
+    "district":"Kajang",
+    "violent_crimes":342
+  },
+  {
+    "state":"Penang",
+    "district":"Timur Laut",
+    "violent_crimes":338
+  },
+  {
+    "state":"Selangor",
+    "district":"Klang Selatan",
+    "violent_crimes":309
+  },
+  {
+    "state":"Selangor",
+    "district":"Petaling Jaya",
+    "violent_crimes":306
+  },
+  {
+    "state":"Selangor",
+    "district":"Klang Utara",
+    "violent_crimes":278
+  },
+  {
+    "state":"Johor",
+    "district":"Johor Bahru Selatan",
+    "violent_crimes":252
+  },
+  {
+    "state":"Kuala Lumpur",
+    "district":"Dang Wangi",
+    "violent_crimes":233
+  },
+  {
+    "state":"Melaka",
+    "district":"Melaka Tengah",
+    "violent_crimes":229
+  }
+]
