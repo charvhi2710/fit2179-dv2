@@ -1,0 +1,134 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Sunburst: category > crime type > state contributors (Malaysia 2023).",
+  "width": 480,
+  "height": 480,
+  "padding": 12,
+  "autosize": "none",
+  "background": "transparent",
+
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/crime_hierarchy_2023.json",
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "partition",
+          "field": "value",
+          "sort": {"field": "value", "order": "descending"},
+          "size": [{"signal": "2 * PI"}, {"signal": "width / 2 - 20"}],
+          "as": ["a0", "r0", "a1", "r1", "depth", "children"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "typeColor",
+      "type": "ordinal",
+      "domain": [
+        "Causing injury", "Murder", "Rape", "Robbery",
+        "Break-in", "Vehicle theft", "Theft (other)"
+      ],
+      "range": [
+        "#1e3a5f", "#2c5f8a", "#5085b0", "#88aed3",
+        "#a47e1b", "#c9a553", "#e2c98f"
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "tree"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"},
+          "tooltip": {
+            "signal": "{title: datum.name, cases: format(datum.value, ',d')}"
+          }
+        },
+        "update": {
+          "startAngle": {"field": "a0"},
+          "endAngle": {"field": "a1"},
+          "innerRadius": {"field": "r0"},
+          "outerRadius": {"field": "r1"},
+          "stroke": {"value": "#ffffff"},
+          "strokeWidth": {"value": 1.4},
+          "fill": [
+            {
+              "test": "datum.depth === 0",
+              "value": "#ffffff"
+            },
+            {
+              "test": "datum.depth === 1 && datum.name === 'Assault'",
+              "value": "#3d5775"
+            },
+            {
+              "test": "datum.depth === 1 && datum.name === 'Property'",
+              "value": "#b88d35"
+            },
+            {
+              "test": "datum.depth === 2",
+              "scale": "typeColor",
+              "field": "name"
+            },
+            {
+              "test": "datum.depth >= 3",
+              "scale": "typeColor",
+              "field": "type"
+            }
+          ],
+          "fillOpacity": [
+            {"test": "datum.depth === 3", "value": 0.55},
+            {"value": 1}
+          ]
+        },
+        "hover": {
+          "fillOpacity": {"value": 0.6}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "tree"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"},
+          "fontSize": [
+            {"test": "datum.depth === 1", "value": 12},
+            {"value": 10}
+          ],
+          "fontWeight": [
+            {"test": "datum.depth === 1", "value": 700},
+            {"value": 400}
+          ],
+          "font": {"value": "Open Sans"},
+          "fill": [
+            {"test": "datum.depth === 1", "value": "#ffffff"},
+            {"value": "#1a1a1a"}
+          ],
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"}
+        },
+        "update": {
+          "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
+          "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
+          "text": [
+            {"test": "datum.depth === 1", "field": "name"},
+            {"test": "datum.depth === 2 && (datum.a1 - datum.a0) > 0.22", "field": "name"},
+            {"value": ""}
+          ]
+        }
+      }
+    }
+  ]
+}
