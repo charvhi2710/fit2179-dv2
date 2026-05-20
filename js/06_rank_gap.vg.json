@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Rank gap — crime rate rank vs poverty rank, by state.",
+    "subtitle": "States to the right have more crime than poverty alone would predict; states to the left have less.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#888",
+    "subtitleFont": "Open Sans",
+    "subtitlePadding": 6
+  },
+  "width": "container",
+  "height": 380,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "data": {"url": "data/analysis_state_2023.json"},
+  "transform": [
+    {
+      "calculate": "datum.rank_gap > 0 ? 'more' : 'less'",
+      "as": "direction"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "tooltip": true,
+    "cornerRadiusEnd": 2,
+    "height": {"band": 0.7}
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": {"field": "rank_gap", "order": "descending"},
+      "title": null,
+      "axis": {
+        "labelFontSize": 12,
+        "labelFont": "Open Sans",
+        "labelColor": "#333",
+        "labelPadding": 8,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "x": {
+      "field": "rank_gap",
+      "type": "quantitative",
+      "title": "Rank gap (poverty rank − crime-rate rank)",
+      "scale": {"domain": [-10, 10]},
+      "axis": {
+        "labelFontSize": 11,
+        "labelFont": "Open Sans",
+        "titleFont": "Open Sans",
+        "titleFontSize": 12,
+        "titleColor": "#666",
+        "titlePadding": 10,
+        "grid": true,
+        "gridColor": "#eee",
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "color": {
+      "field": "direction",
+      "type": "nominal",
+      "scale": {
+        "domain": ["more", "less"],
+        "range": ["#a47e1b", "#1e3a5f"]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "rank_by_count", "title": "Rank by count"},
+      {"field": "rank_by_rate", "title": "Rank by rate"},
+      {"field": "poverty_rank", "title": "Rank by poverty"},
+      {"field": "rank_gap", "title": "Rank gap"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
