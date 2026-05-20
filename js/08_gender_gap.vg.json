@@ -1,0 +1,169 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Men remain more often the victims of homicide, but the gap has narrowed.",
+    "subtitle": "Homicide rate per 100,000 by sex, Malaysia, 2016 to 2022. Shaded band shows the gap between male and female rates.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#888",
+    "subtitleFont": "Open Sans",
+    "subtitlePadding": 6
+  },
+  "width": "container",
+  "height": 340,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "data": {"url": "data/homicide_by_sex.json"},
+  "transform": [
+    {"filter": "datum.sex !== 'both'"}
+  ],
+  "layer": [
+    {
+      "transform": [
+        {"pivot": "sex", "value": "rate_per_100k", "groupby": ["year"]}
+      ],
+      "mark": {
+        "type": "area",
+        "color": "#cfcfcf",
+        "opacity": 0.55,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {"domain": [2016, 2022]},
+          "axis": null
+        },
+        "y": {
+          "field": "male",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y2": {"field": "female"}
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "strokeWidth": 2.5,
+        "point": {"filled": true, "size": 60}
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {"domain": [2016, 2022]},
+          "title": null,
+          "axis": {
+            "labelFontSize": 12,
+            "labelFont": "Open Sans",
+            "labelColor": "#444",
+            "format": "d",
+            "domain": false,
+            "ticks": false,
+            "grid": false,
+            "tickCount": 7
+          }
+        },
+        "y": {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Homicide rate per 100,000",
+          "axis": {
+            "labelFontSize": 11,
+            "labelFont": "Open Sans",
+            "titleFont": "Open Sans",
+            "titleFontSize": 12,
+            "titleColor": "#666",
+            "titlePadding": 10,
+            "grid": true,
+            "gridColor": "#eee",
+            "domain": false,
+            "ticks": false
+          }
+        },
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {
+            "domain": ["male", "female"],
+            "range": ["#1e3a5f", "#a47e1b"]
+          },
+          "legend": {
+            "title": "Victim sex",
+            "titleFont": "Open Sans",
+            "labelFont": "Open Sans",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "orient": "top-right"
+          }
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "sex", "title": "Sex"},
+          {"field": "rate_per_100k", "title": "Rate per 100k", "format": ".3f"}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"year": 2020, "y": 0.5}]},
+      "mark": {
+        "type": "rule",
+        "stroke": "#222",
+        "strokeWidth": 1,
+        "strokeDash": [3, 3]
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [2016, 2022]}}
+      }
+    },
+    {
+      "data": {"values": [{"year": 2020, "y": 0.48, "label": "COVID-19 lockdowns"}]},
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -4,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "font": "Open Sans",
+        "color": "#222"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [2016, 2022]}},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {"values": [{"year": 2021, "y": 0.42, "label": "Men ≈ 4× more often the victims"}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "font": "Open Sans",
+        "color": "#1e3a5f"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [2016, 2022]}},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
