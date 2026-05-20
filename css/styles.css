@@ -60,7 +60,7 @@ p {
   font-size: 16px;
   line-height: 1.65;
   color: #1a1a1a;
-  max-width: 56ch;        /* tighter — keeps lines at ~9–12 words */
+  max-width: 50ch;        /* hard ceiling at ~9–11 words per line */
   margin: 0 0 16px 0;
 }
 
@@ -123,6 +123,12 @@ a {
   text-decoration: underline;
 }
 
+/* Centre fixed-width sunburst SVG within its container */
+#vis11 {
+  display: flex;
+  justify-content: center;
+}
+
 /* Small caption above each chart (used in paired layouts) */
 .chart-caption {
   font-size: 11px;
@@ -131,6 +137,78 @@ a {
   text-transform: uppercase;
   color: #666;
   margin: 16px 0 8px 0;
+}
+
+/* Alternating text-and-chart row layout (Section 2 editorial spread) */
+.chart-row {
+  align-items: center;          /* vertically centre text beside chart */
+}
+
+.text-col p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1a1a1a;
+  margin: 12px 0 0 0;
+  max-width: 42ch;              /* tighter for half-column text */
+}
+
+.text-col-left {
+  padding-right: 32px;
+}
+
+.text-col-right {
+  padding-left: 32px;
+  padding-right: 0;
+}
+
+/* Stats panel (Section 01 — scope sidebar) */
+.stats-panel {
+  border-left: 3px solid #1e3a5f;
+  padding: 6px 0 6px 28px;
+  margin-top: 8px;
+}
+
+.stats-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 18px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 14px;
+  gap: 18px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1e3a5f;
+  min-width: 64px;
+  text-align: right;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.stat-sub {
+  color: #888;
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
 }
 
 /* In paired layouts, give each half a bit of breathing room */
