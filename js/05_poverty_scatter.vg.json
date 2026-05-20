@@ -1,0 +1,182 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wealthier states aren't safer — the map disagrees with the instinct.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666"
+  },
+  "width": "container",
+  "height": 420,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "data": {"url": "data/analysis_state_2023.json"},
+  "layer": [
+    {
+      "transform": [
+        {"regression": "rate_per_100k", "on": "poverty"}
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#b8b8b8",
+        "strokeDash": [4, 4],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {"field": "poverty", "type": "quantitative"},
+        "y": {"field": "rate_per_100k", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 140,
+        "opacity": 1,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "poverty",
+          "type": "quantitative",
+          "title": "Poverty rate (%)",
+          "scale": {"domain": [0, 22], "nice": true},
+          "axis": {
+            "labelFont": "Open Sans",
+            "labelFontSize": 11,
+            "titleFont": "Open Sans",
+            "titleFontSize": 12,
+            "titleColor": "#666",
+            "titlePadding": 10,
+            "grid": true,
+            "gridColor": "#eee",
+            "domain": false,
+            "ticks": false
+          }
+        },
+        "y": {
+          "field": "rate_per_100k",
+          "type": "quantitative",
+          "title": "Violent crime rate per 100,000",
+          "scale": {"domain": [0, 60], "nice": true},
+          "axis": {
+            "labelFont": "Open Sans",
+            "labelFontSize": 11,
+            "titleFont": "Open Sans",
+            "titleFontSize": 12,
+            "titleColor": "#666",
+            "titlePadding": 10,
+            "grid": true,
+            "gridColor": "#eee",
+            "domain": false,
+            "ticks": false
+          }
+        },
+        "color": {
+          "condition": [
+            {"test": "datum.state === 'Penang'", "value": "#a47e1b"},
+            {"test": "datum.state === 'Sabah'", "value": "#1e3a5f"}
+          ],
+          "value": "#555"
+        },
+        "tooltip": [
+          {"field": "state", "title": "State"},
+          {"field": "poverty", "title": "Poverty rate (%)", "format": ".1f"},
+          {"field": "rate_per_100k", "title": "Violent crime rate per 100k", "format": ".1f"},
+          {"field": "income_mean", "title": "Mean income (RM)", "format": ","},
+          {"field": "violent_crimes", "title": "Total cases", "format": ","}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state !== 'Kuala Lumpur' && datum.state !== 'Melaka'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "dy": 0,
+        "fontSize": 11,
+        "font": "Open Sans"
+      },
+      "encoding": {
+        "x": {"field": "poverty", "type": "quantitative"},
+        "y": {"field": "rate_per_100k", "type": "quantitative"},
+        "text": {"field": "state"},
+        "color": {
+          "condition": [
+            {"test": "datum.state === 'Penang'", "value": "#a47e1b"},
+            {"test": "datum.state === 'Sabah'", "value": "#1e3a5f"}
+          ],
+          "value": "#444"
+        },
+        "fontWeight": {
+          "condition": [
+            {"test": "datum.state === 'Penang' || datum.state === 'Sabah'", "value": 700}
+          ],
+          "value": 400
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state === 'Kuala Lumpur'"}],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dx": 0,
+        "dy": -14,
+        "fontSize": 11,
+        "font": "Open Sans",
+        "color": "#444"
+      },
+      "encoding": {
+        "x": {"field": "poverty", "type": "quantitative"},
+        "y": {"field": "rate_per_100k", "type": "quantitative"},
+        "text": {"field": "state"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state === 'Melaka'"}],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dx": 0,
+        "dy": 12,
+        "fontSize": 11,
+        "font": "Open Sans",
+        "color": "#444"
+      },
+      "encoding": {
+        "x": {"field": "poverty", "type": "quantitative"},
+        "y": {"field": "rate_per_100k", "type": "quantitative"},
+        "text": {"field": "state"}
+      }
+    },
+    {
+      "data": {"values": [{"x": 14, "y": 47, "label": "Wealthier states sit higher →"}]},
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "font": "Open Sans",
+        "color": "#a47e1b"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
