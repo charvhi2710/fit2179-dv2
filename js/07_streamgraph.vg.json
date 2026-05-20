@@ -1,0 +1,116 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How the composition of violent crime has shifted, 2016 to 2023.",
+    "subtitle": "Each band's thickness is its share of the year's total. Navy tones are violent (assault) crimes; gold tones are property crimes.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#888",
+    "subtitleFont": "Open Sans",
+    "subtitlePadding": 6
+  },
+  "width": "container",
+  "height": 360,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "data": {"url": "data/crime_types_by_year.json"},
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "tooltip": true,
+        "strokeWidth": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": null,
+          "axis": {
+            "labelFontSize": 12,
+            "labelFont": "Open Sans",
+            "labelColor": "#444",
+            "labelPadding": 8,
+            "domain": false,
+            "ticks": false,
+            "grid": false
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "total",
+          "type": "quantitative",
+          "stack": "center",
+          "axis": null
+        },
+        "color": {
+          "field": "type_label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Causing injury", "Murder", "Rape", "Robbery", "Break-in", "Vehicle theft", "Theft (other)"],
+            "range": ["#1e3a5f", "#2c5f8a", "#5085b0", "#88aed3", "#a47e1b", "#c9a553", "#e2c98f"]
+          },
+          "legend": {
+            "title": "Crime type",
+            "titleFont": "Open Sans",
+            "labelFont": "Open Sans",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "orient": "right",
+            "symbolType": "square",
+            "symbolSize": 120
+          }
+        },
+        "order": {
+          "field": "type_label",
+          "sort": ["Causing injury", "Murder", "Rape", "Robbery", "Break-in", "Vehicle theft", "Theft (other)"]
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "type_label", "title": "Crime type"},
+          {"field": "total", "title": "Cases", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"year": 2020, "label": "COVID-19 lockdowns"}]},
+      "mark": {
+        "type": "rule",
+        "stroke": "#222",
+        "strokeWidth": 1,
+        "strokeDash": [3, 3]
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"}
+      }
+    },
+    {
+      "data": {"values": [{"year": 2020, "label": "COVID-19 lockdowns"}]},
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -6,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "font": "Open Sans",
+        "color": "#222"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
