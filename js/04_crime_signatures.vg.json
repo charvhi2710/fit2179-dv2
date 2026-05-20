@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Each state has its own crime signature.",
-    "subtitle": "Navy = violent (assault) crimes · Gold = property crimes. Bar lengths are scaled within each state.",
+    "subtitle": [
+      "Navy = violent (assault) crimes · Gold = property crimes. Bar lengths are scaled within each state.",
+      "Sabah and Sarawak skew strongly toward property crime; KL and Penang carry visibly higher robbery and causing-injury shares."
+    ],
     "anchor": "start",
     "fontSize": 13,
     "font": "Open Sans",

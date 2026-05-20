@@ -23,17 +23,11 @@
     },
     {"filter": "datum.rank <= 6"}
   ],
-  "mark": {
-    "type": "bar",
-    "color": "#2c3e50",
-    "tooltip": true,
-    "cornerRadiusEnd": 2
-  },
   "encoding": {
     "y": {
       "field": "state",
       "type": "nominal",
-      "sort": "-x",
+      "sort": {"field": "violent_crimes", "order": "descending"},
       "title": null,
       "axis": {
         "labelFontSize": 13,
@@ -61,13 +55,41 @@
         "format": ",d",
         "tickCount": 4
       }
-    },
-    "tooltip": [
-      {"field": "state", "title": "State"},
-      {"field": "violent_crimes", "title": "Violent crime cases", "format": ","},
-      {"field": "rank_by_count", "title": "Rank by count"}
-    ]
+    }
   },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#2c3e50",
+        "tooltip": true,
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "state", "title": "State"},
+          {"field": "violent_crimes", "title": "Violent crime cases", "format": ","},
+          {"field": "rank_by_count", "title": "Rank by count"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state === 'Selangor'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "font": "Open Sans",
+        "color": "#a47e1b"
+      },
+      "encoding": {
+        "text": {"value": "~1 in 4 violent crimes happen here"}
+      }
+    }
+  ],
   "config": {
     "view": {"stroke": null},
     "background": null,

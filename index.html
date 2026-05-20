@@ -36,32 +36,67 @@
       </div>
     </div>
 
-    <!-- ===== SECTION 1: framing intro ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <!-- ===== SECTION 1: framing intro + scope panel ===== -->
+    <div class="pure-g chart-row">
+      <div class="pure-u-1-2 text-col text-col-left">
         <span class="section-number">01 &mdash; Setting the scene</span>
         <h2>What we mean by &ldquo;violent crime&rdquo;</h2>
         <p>Violent crime is not one thing. It includes the everyday property losses that empty out a wallet, and the rarer, deeper violations that reach into a person directly. The Royal Malaysia Police records both, across every district in the country.</p>
       </div>
+      <div class="pure-u-1-2">
+        <div class="stats-panel">
+          <div class="stats-title">The scope</div>
+          <div class="stat-row">
+            <span class="stat-num">14</span>
+            <span class="stat-label">States with crime records</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">159</span>
+            <span class="stat-label">Police districts</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Crime categories <span class="stat-sub">(assault &middot; property)</span></span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Specific crime types</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">8</span>
+            <span class="stat-label">Years of data <span class="stat-sub">(2016&ndash;2023)</span></span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- ===== SECTION 2: Volume vs Risk (paired) ===== -->
+    <!-- ===== SECTION 2: Volume vs Risk (alternating layout) ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <span class="section-number">02 &mdash; Volume vs risk</span>
         <h2>Two ways to count the same country</h2>
-        <p>The most populated places carry the loudest count. But scale is not the same thing as risk &mdash; and adjusting for population reveals a different geography of harm.</p>
       </div>
     </div>
 
-    <div class="pure-g">
-      <div class="pure-u-1-2">
+    <!-- Row 1: text LEFT, bar chart RIGHT -->
+    <div class="pure-g chart-row">
+      <div class="pure-u-1-2 text-col text-col-left">
         <div class="chart-caption">VOLUME &mdash; raw cases</div>
-        <div id="vis1" class="vis-container"></div>
+        <p>The most populated places carry the loudest count. Selangor and Kuala Lumpur &mdash; the economic centre of the country &mdash; together hold roughly a third of every violent crime recorded in 2023.</p>
       </div>
       <div class="pure-u-1-2">
-        <div class="chart-caption">RISK &mdash; rate per 100,000</div>
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- Row 2: rate map LEFT, text RIGHT -->
+    <div class="pure-g chart-row">
+      <div class="pure-u-1-2">
         <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2 text-col text-col-right">
+        <div class="chart-caption">RISK &mdash; rate per 100,000</div>
+        <p>But scale is not the same thing as risk. Adjust for population and the country looks different &mdash; the states that loomed largest a moment ago shrink to ordinary, and the ones we barely noticed step forward.</p>
       </div>
     </div>
 
@@ -85,6 +120,76 @@
       </div>
     </div>
 
+    <!-- ===== SECTION 5: Two surprises about safety (paired) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">05 &mdash; Two surprises about safety</span>
+        <h2>The map disagrees with the instinct &mdash; twice</h2>
+        <p>The first surprise is that wealthier states are not safer overall. The second cuts the data differently: when you ask specifically where women face the highest risk of rape, the geography flips again. The poorest states are not the most dangerous, and the wealthiest places are not the safest &mdash; for women, the pattern is different still.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="chart-caption">WEALTH &times; CRIME RATE</div>
+        <div id="vis5" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="chart-caption">RAPE RISK BY STATE</div>
+        <div id="vis6" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 6: Crime across the years (streamgraph) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">06 &mdash; Crime across the years</span>
+        <h2>The composition has shifted</h2>
+        <p>The years since 2016 tell a story of their own. Total violent crime fell sharply, and within that decline, the mix of crimes Malaysians faced has changed. The COVID-19 lockdowns left a clear footprint in the middle of the chart.</p>
+        <div id="vis7" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 7: Who is harmed (gender area only) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">07 &mdash; Who is harmed</span>
+        <h2>The line has fallen unevenly</h2>
+        <p>Behind every line on this chart is a household with one fewer person at the table. The homicide rate has dropped year after year, but not at the same speed for men and women. The shaded band between the two is the difference.</p>
+        <div id="vis8" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 8: Where it concentrates (districts) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">08 &mdash; Where it really concentrates</span>
+        <h2>Beneath the state, ten specific districts carry the volume</h2>
+        <p>State-level numbers tell one story; district-level numbers tell another. The ten busiest police districts of 2023 cluster heavily in the Selangor urban belt, with single hotspots in Ipoh, Penang's Timur Laut and Kuala Lumpur's Dang Wangi. Inside every busy state, crime is concentrated in just a few places.</p>
+        <div id="vis9" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 9: Closing — the national mix (radial) ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">09 &mdash; Closing summary</span>
+        <h2>One country, one year, in one circle</h2>
+        <p>A final view: the entire shape of Malaysia's 2023 violent crime as a single picture. The dominance of property crime in the country's day-to-day experience is immediately visible, as is the smaller but heavier presence of crimes against people.</p>
+        <div id="vis10" class="vis-container"></div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 10: Hierarchy — the sunburst ===== -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <span class="section-number">10 &mdash; The same picture, with depth</span>
+        <h2>From category to type to where it happens</h2>
+        <p>The closing view as a hierarchy. The inner ring splits the year's crime into its two broad families. The middle ring breaks each family into its specific types. The outer ring shows the five states that contribute most cases to each type. Hover any arc to drill into the number.</p>
+        <div id="vis11" class="vis-container"></div>
+      </div>
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
@@ -102,11 +207,25 @@
     var specVis2 = "./js/02_rate_map.vg.json";
     var specVis3 = "./js/03_rank_flip.vg.json";
     var specVis4 = "./js/04_crime_signatures.vg.json";
+    var specVis5 = "./js/05_poverty_scatter.vg.json";
+    var specVis6 = "./js/06_rape_rate.vg.json";
+    var specVis7 = "./js/07_streamgraph.vg.json";
+    var specVis8 = "./js/08_gender_gap.vg.json";
+    var specVis9 = "./js/09_top_districts.vg.json";
+    var specVis10 = "./js/10_radial_mix.vg.json";
+    var specVis11 = "./js/11_sunburst.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).catch(console.error);
     vegaEmbed('#vis2', specVis2, { "actions": false }).catch(console.error);
     vegaEmbed('#vis3', specVis3, { "actions": false }).catch(console.error);
     vegaEmbed('#vis4', specVis4, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis5', specVis5, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis6', specVis6, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis7', specVis7, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis8', specVis8, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis9', specVis9, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis10', specVis10, { "actions": false }).catch(console.error);
+    vegaEmbed('#vis11', specVis11, { "actions": false }).catch(console.error);
   </script>
 
 </body>

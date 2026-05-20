@@ -97,6 +97,28 @@
           {"field": "rank_by_rate", "title": "Rank by rate"}
         ]
       }
+    },
+    {
+      "data": {
+        "values": [
+          {"lon": 100.3, "lat": 6.6, "label": "Penang — highest rate"},
+          {"lon": 117.0, "lat": 7.4, "label": "Sabah — lowest rate"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "font": "Open Sans",
+        "color": "#1e3a5f",
+        "align": "left",
+        "dx": 4
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
     }
   ],
   "config": {
