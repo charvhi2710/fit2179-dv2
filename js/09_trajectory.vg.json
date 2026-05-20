@@ -1,0 +1,119 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Both measures of violence fell — but on different curves.",
+    "subtitle": "Each point is a year. The path traces how Malaysia's total violent crime (assault category) and homicide rate per 100,000 evolved together from 2016 to 2022.",
+    "anchor": "start",
+    "fontSize": 13,
+    "font": "Open Sans",
+    "fontWeight": 400,
+    "color": "#666",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#888",
+    "subtitleFont": "Open Sans",
+    "subtitlePadding": 6
+  },
+  "width": "container",
+  "height": 380,
+  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "autosize": {"type": "fit", "contains": "padding"},
+  "background": null,
+  "data": {"url": "data/crime_homicide_trajectory.json"},
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#888",
+        "strokeWidth": 1.5,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "total_violent_crimes",
+          "type": "quantitative",
+          "scale": {"domain": [9000, 24000], "nice": true}
+        },
+        "y": {
+          "field": "homicide_rate_per_100k",
+          "type": "quantitative",
+          "scale": {"domain": [0, 0.32], "nice": true}
+        },
+        "order": {"field": "year"}
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 180,
+        "tooltip": true,
+        "color": "#1e3a5f"
+      },
+      "encoding": {
+        "x": {
+          "field": "total_violent_crimes",
+          "type": "quantitative",
+          "title": "Total violent crime cases (national)",
+          "axis": {
+            "labelFontSize": 11,
+            "labelFont": "Open Sans",
+            "titleFont": "Open Sans",
+            "titleFontSize": 12,
+            "titleColor": "#666",
+            "titlePadding": 10,
+            "grid": true,
+            "gridColor": "#eee",
+            "domain": false,
+            "ticks": false,
+            "format": ",d"
+          }
+        },
+        "y": {
+          "field": "homicide_rate_per_100k",
+          "type": "quantitative",
+          "title": "Homicide rate per 100,000",
+          "axis": {
+            "labelFontSize": 11,
+            "labelFont": "Open Sans",
+            "titleFont": "Open Sans",
+            "titleFontSize": 12,
+            "titleColor": "#666",
+            "titlePadding": 10,
+            "grid": true,
+            "gridColor": "#eee",
+            "domain": false,
+            "ticks": false,
+            "format": ".2f"
+          }
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "total_violent_crimes", "title": "Total violent crime", "format": ","},
+          {"field": "homicide_rate_per_100k", "title": "Homicide rate per 100k", "format": ".3f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 14,
+        "dy": 0,
+        "fontSize": 11,
+        "font": "Open Sans",
+        "fontWeight": 600,
+        "color": "#1e3a5f"
+      },
+      "encoding": {
+        "x": {"field": "total_violent_crimes", "type": "quantitative"},
+        "y": {"field": "homicide_rate_per_100k", "type": "quantitative"},
+        "text": {"field": "year"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": null,
+    "font": "Open Sans"
+  }
+}
