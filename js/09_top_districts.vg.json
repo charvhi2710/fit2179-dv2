@@ -9,15 +9,15 @@
     "fontWeight": 400,
     "color": "#666",
     "subtitleFontSize": 11,
-    "subtitleColor": "#888",
+    "subtitleColor": "#777",
     "subtitleFont": "Open Sans",
     "subtitlePadding": 6
   },
   "width": "container",
-  "height": 440,
+  "height": 410,
   "padding": {
     "left": 6,
-    "right": 190,
+    "right": 60,
     "top": 8,
     "bottom": 8
   },
@@ -69,9 +69,11 @@
           "type": "quantitative",
           "title": "Violent crime cases (2023)",
           "scale": {
-            "domain": [0, 430]
+            "domain": [0, 410],
+            "nice": false
           },
           "axis": {
+            "values": [0, 50, 100, 150, 200, 250, 300, 350, 400],
             "labelFontSize": 11,
             "labelFont": "Open Sans",
             "titleFont": "Open Sans",
@@ -187,18 +189,18 @@
         "values": [
           {
             "district": "Kajang",
-            "x": 388,
+            "x": 360,
             "label": "Selangor appears repeatedly."
           },
           {
             "district": "Klang Selatan",
-            "x": 388,
+            "x": 360,
             "label": "5 of the top 10 districts are here."
           },
           {
             "district": "Klang Utara",
-            "x": 388,
-            "label": "The volume is concentrated, not spread evenly."
+            "x": 320,
+            "label": "Volume is concentrated, not spread evenly."
           }
         ]
       },
@@ -208,8 +210,8 @@
         "baseline": "middle",
         "dx": 0,
         "fontSize": 11,
-        "fontStyle": "italic",
-        "fontWeight": 600,
+        "fontStyle": "normal",
+        "fontWeight": 500,
         "font": "Open Sans",
         "color": "#574879"
       },
