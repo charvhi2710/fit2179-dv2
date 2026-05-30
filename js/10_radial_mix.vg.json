@@ -12,17 +12,17 @@
     "fontWeight": 400,
     "color": "#666",
     "subtitleFontSize": 11,
-    "subtitleColor": "#888",
+    "subtitleColor": "#777",
     "subtitleFont": "Open Sans",
     "subtitlePadding": 6
   },
   "width": "container",
-  "height": 480,
+  "height": 530,
   "padding": {
     "left": 6,
-    "right": 130,
-    "top": 8,
-    "bottom": 8
+    "right": 30,
+    "top": 10,
+    "bottom": 35
   },
   "autosize": {
     "type": "fit",
@@ -33,40 +33,74 @@
     "url": "data/crime_types_by_year.json"
   },
   "transform": [
-    {"filter": "datum.year === 2023"},
     {
-      "aggregate": [{"op": "sum", "field": "total", "as": "cases"}],
+      "filter": "datum.year === 2023"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "total",
+          "as": "cases"
+        }
+      ],
       "groupby": ["type_label", "category"]
     },
     {
-      "joinaggregate": [{"op": "sum", "field": "cases", "as": "total_cases"}]
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "cases",
+          "as": "total_cases"
+        }
+      ]
     },
-    {"calculate": "datum.cases / datum.total_cases", "as": "pct"},
-    {"calculate": "datum.pct < 0.01 ? '<1%' : format(datum.pct, '.0%')", "as": "pct_label"}
+    {
+      "calculate": "datum.cases / datum.total_cases",
+      "as": "pct"
+    },
+    {
+      "calculate": "datum.pct < 0.01 ? '<1%' : format(datum.pct, '.0%')",
+      "as": "pct_label"
+    }
   ],
   "layer": [
     {
       "mark": {
         "type": "arc",
-        "innerRadius": 78,
+        "innerRadius": 112,
         "outerRadius": 200,
         "stroke": "#fff",
         "strokeWidth": 2,
         "tooltip": true
       },
       "encoding": {
-        "theta": {"field": "cases", "type": "quantitative", "stack": true},
+        "theta": {
+          "field": "cases",
+          "type": "quantitative",
+          "stack": true
+        },
         "color": {
           "field": "type_label",
           "type": "nominal",
           "scale": {
             "domain": [
-              "Causing injury", "Murder", "Rape", "Robbery",
-              "Break-in", "Vehicle theft", "Theft (other)"
+              "Causing injury",
+              "Murder",
+              "Rape",
+              "Robbery",
+              "Break-in",
+              "Vehicle theft",
+              "Theft (other)"
             ],
             "range": [
-              "#34547a", "#4a78a3", "#6e9ac4", "#9bbdde",
-              "#a47e1b", "#c9a553", "#e2c98f"
+              "#34547a",
+              "#4a78a3",
+              "#6e9ac4",
+              "#9bbdde",
+              "#a47e1b",
+              "#c9a553",
+              "#e2c98f"
             ]
           },
           "legend": {
@@ -75,56 +109,96 @@
             "labelFont": "Open Sans",
             "titleFontSize": 11,
             "labelFontSize": 11,
-            "orient": "right",
+            "titleColor": "#111",
+            "labelColor": "#222",
+            "orient": "top",
+            "direction": "horizontal",
             "symbolType": "square",
-            "symbolSize": 130,
-            "offset": 6,
-            "padding": 0,
-            "rowPadding": 4
+            "symbolSize": 120,
+            "rowPadding": 8
           }
         },
         "order": {
           "field": "type_label",
           "sort": [
-            "Causing injury", "Murder", "Rape", "Robbery",
-            "Break-in", "Vehicle theft", "Theft (other)"
+            "Causing injury",
+            "Murder",
+            "Rape",
+            "Robbery",
+            "Break-in",
+            "Vehicle theft",
+            "Theft (other)"
           ]
         },
         "tooltip": [
-          {"field": "type_label", "title": "Crime type"},
-          {"field": "category", "title": "Category"},
-          {"field": "cases", "title": "Cases (2023)", "format": ","},
-          {"field": "pct_label", "title": "Share of total"}
+          {
+            "field": "type_label",
+            "title": "Crime type"
+          },
+          {
+            "field": "category",
+            "title": "Category"
+          },
+          {
+            "field": "cases",
+            "title": "Cases (2023)",
+            "format": ","
+          },
+          {
+            "field": "pct_label",
+            "title": "Share of total"
+          }
         ]
       }
     },
     {
-      "transform": [{"filter": "datum.pct >= 0.07"}],
+      "transform": [
+        {
+          "filter": "datum.pct >= 0.07"
+        }
+      ],
       "mark": {
         "type": "text",
-        "radius": 228,
-        "fontSize": 12,
+        "radius": 222,
+        "fontSize": 11,
         "fontWeight": 600,
         "font": "Open Sans",
         "color": "#1a1a1a"
       },
       "encoding": {
-        "theta": {"field": "cases", "type": "quantitative", "stack": true},
-        "text": {"field": "pct_label"},
+        "theta": {
+          "field": "cases",
+          "type": "quantitative",
+          "stack": true
+        },
+        "text": {
+          "field": "pct_label"
+        },
         "order": {
           "field": "type_label",
           "sort": [
-            "Causing injury", "Murder", "Rape", "Robbery",
-            "Break-in", "Vehicle theft", "Theft (other)"
+            "Causing injury",
+            "Murder",
+            "Rape",
+            "Robbery",
+            "Break-in",
+            "Vehicle theft",
+            "Theft (other)"
           ]
         }
       }
     }
+   
+    
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "background": null,
     "font": "Open Sans",
-    "axis": {"grid": false}
+    "axis": {
+      "grid": false
+    }
   }
 }
