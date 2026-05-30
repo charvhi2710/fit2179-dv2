@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Sunburst: category > crime type > state contributors (Malaysia 2023).",
-  "width": 480,
-  "height": 480,
-  "padding": 12,
+  "width": 600,
+  "height": 540,
+  "padding": 8,
   "autosize": "none",
   "background": "transparent",
 
@@ -20,8 +20,14 @@
         {
           "type": "partition",
           "field": "value",
-          "sort": {"field": "value", "order": "descending"},
-          "size": [{"signal": "2 * PI"}, {"signal": "width / 2 - 20"}],
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "size": [
+            {"signal": "2 * PI"},
+            {"signal": "min(width, height) / 2 - 30"}
+          ],
           "as": ["a0", "r0", "a1", "r1", "depth", "children"]
         }
       ]
@@ -37,7 +43,7 @@
         "Break-in", "Vehicle theft", "Theft (other)"
       ],
       "range": [
-        "#1e3a5f", "#2c5f8a", "#5085b0", "#88aed3",
+        "#34547a", "#4a78a3", "#6e9ac4", "#9bbdde",
         "#a47e1b", "#c9a553", "#e2c98f"
       ]
     }
@@ -52,7 +58,7 @@
           "x": {"signal": "width / 2"},
           "y": {"signal": "height / 2"},
           "tooltip": {
-            "signal": "{title: datum.name, cases: format(datum.value, ',d')}"
+            "signal": "datum.depth === 0 ? null : {title: datum.name, cases: format(datum.value, ',d')}"
           }
         },
         "update": {
@@ -63,39 +69,23 @@
           "stroke": {"value": "#ffffff"},
           "strokeWidth": {"value": 1.4},
           "fill": [
-            {
-              "test": "datum.depth === 0",
-              "value": "#ffffff"
-            },
-            {
-              "test": "datum.depth === 1 && datum.name === 'Assault'",
-              "value": "#3d5775"
-            },
-            {
-              "test": "datum.depth === 1 && datum.name === 'Property'",
-              "value": "#b88d35"
-            },
-            {
-              "test": "datum.depth === 2",
-              "scale": "typeColor",
-              "field": "name"
-            },
-            {
-              "test": "datum.depth >= 3",
-              "scale": "typeColor",
-              "field": "type"
-            }
+            {"test": "datum.depth === 0", "value": "#ffffff"},
+            {"test": "datum.depth === 1 && datum.name === 'Assault'", "value": "#3d5775"},
+            {"test": "datum.depth === 1 && datum.name === 'Property'", "value": "#b88d35"},
+            {"test": "datum.depth === 2", "scale": "typeColor", "field": "name"},
+            {"test": "datum.depth >= 3", "scale": "typeColor", "field": "type"}
           ],
           "fillOpacity": [
-            {"test": "datum.depth === 3", "value": 0.55},
+            {"test": "datum.depth === 3", "value": 0.6},
             {"value": 1}
           ]
         },
         "hover": {
-          "fillOpacity": {"value": 0.6}
+          "fillOpacity": {"value": 0.85}
         }
       }
     },
+
     {
       "type": "text",
       "from": {"data": "tree"},
@@ -103,27 +93,45 @@
         "enter": {
           "x": {"signal": "width / 2"},
           "y": {"signal": "height / 2"},
-          "fontSize": [
-            {"test": "datum.depth === 1", "value": 12},
-            {"value": 10}
-          ],
-          "fontWeight": [
-            {"test": "datum.depth === 1", "value": 700},
-            {"value": 400}
-          ],
           "font": {"value": "Open Sans"},
-          "fill": [
-            {"test": "datum.depth === 1", "value": "#ffffff"},
-            {"value": "#1a1a1a"}
-          ],
           "align": {"value": "center"},
           "baseline": {"value": "middle"}
         },
         "update": {
           "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
           "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
+          "fontSize": {"value": 13},
+          "fontWeight": {"value": 700},
+          "fill": {"value": "#ffffff"},
           "text": [
             {"test": "datum.depth === 1", "field": "name"},
+            {"value": ""}
+          ]
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {"data": "tree"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"},
+          "font": {"value": "Open Sans"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"}
+        },
+        "update": {
+          "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
+          "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
+          "fontSize": {"value": 11},
+          "fontWeight": {"value": 600},
+          "fill": [
+            {"test": "datum.depth === 2 && (datum.name === 'Causing injury' || datum.name === 'Murder')", "value": "#ffffff"},
+            {"value": "#1a1a1a"}
+          ],
+          "text": [
             {"test": "datum.depth === 2 && (datum.a1 - datum.a0) > 0.22", "field": "name"},
             {"value": ""}
           ]

@@ -10,17 +10,12 @@
     "color": "#666"
   },
   "width": "container",
-  "height": 320,
-  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "height": 390,
+  "padding": {"left": 4, "right": 18, "top": 8, "bottom": 8},
   "autosize": {"type": "fit", "contains": "padding"},
-  "data": {
-    "url": "data/analysis_state_2023.json"
-  },
+  "data": {"url": "data/analysis_state_2023.json"},
   "transform": [
-    {
-      "window": [{"op": "rank", "as": "rank"}],
-      "sort": [{"field": "violent_crimes", "order": "descending"}]
-    },
+    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "violent_crimes", "order": "descending"}]},
     {"filter": "datum.rank <= 6"}
   ],
   "encoding": {
@@ -41,6 +36,7 @@
       "field": "violent_crimes",
       "type": "quantitative",
       "title": "Number of cases",
+      "scale": {"domain": [0, 3200]},
       "axis": {
         "labelFontSize": 11,
         "labelFont": "Open Sans",
@@ -59,12 +55,7 @@
   },
   "layer": [
     {
-      "mark": {
-        "type": "bar",
-        "color": "#2c3e50",
-        "tooltip": true,
-        "cornerRadiusEnd": 2
-      },
+      "mark": {"type": "bar", "color": "#2c3e50", "tooltip": true, "cornerRadiusEnd": 2},
       "encoding": {
         "tooltip": [
           {"field": "state", "title": "State"},
@@ -74,21 +65,33 @@
       }
     },
     {
-      "transform": [{"filter": "datum.state === 'Selangor'"}],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 8,
-        "fontSize": 11,
-        "fontStyle": "italic",
-        "font": "Open Sans",
-        "color": "#a47e1b"
-      },
-      "encoding": {
-        "text": {"value": "~1 in 4 violent crimes happen here"}
+  "data": {
+    "values": [
+      {
+        "state": "Selangor",
+        "x": 2050,
+        "label": "Selangor: 28% of cases"
       }
-    }
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "bottom",
+    "dx": 0,
+    "dy": -28,
+    "fontSize": 11,
+    "fontStyle": "italic",
+    "fontWeight": 600,
+    "font": "Open Sans",
+    "color": "#6d4f12"
+  },
+  "encoding": {
+    "y": {"field": "state", "type": "nominal"},
+    "x": {"field": "x", "type": "quantitative"},
+    "text": {"field": "label"}
+  }
+}
   ],
   "config": {
     "view": {"stroke": null},

@@ -29,19 +29,31 @@
   <div class="page">
 
     <!-- ===== HEADER ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g hero-grid">
+      <div class="pure-u-1-2 hero-copy">
         <h1>Violent Crime in Malaysia</h1>
         <p class="lede">Where the cases sit, where the risk sits, and what those places have in common.</p>
+        <p class="scope-note"><strong>Scope:</strong> PDRM Crime Index, 2016&ndash;2023. &ldquo;Violent crime&rdquo; is used in the broader Crime Index sense throughout &mdash; it covers both <em>assault-related</em> crime (causing injury, murder, rape, robbery) and <em>property-related</em> crime (break-in, vehicle theft, other theft), each labelled clearly inside every chart.</p>
+      </div>
+      <div class="pure-u-1-2 hero-panel-wrap">
+        <div class="hero-panel">
+          <div class="hero-kicker">Dashboard takeaway</div>
+          <p><strong>Volume and risk point to different places.</strong> Selangor dominates recorded cases, but rate per 100,000 pushes Kuala Lumpur and Penang forward.</p>
+          <div class="hero-stat-row">
+            <span><b>52,444</b> recorded Crime Index cases nationwide in 2023</span>
+            <span><b>~28%</b> of <em>assault-related</em> cases recorded in Selangor</span>
+            <span><b>~80%</b> of all cases are <em>property-related</em></span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ===== SECTION 1: framing intro + scope panel ===== -->
-    <div class="pure-g chart-row">
+    <div class="pure-g chart-row editorial-row">
       <div class="pure-u-1-2 text-col text-col-left">
         <span class="section-number">01 &mdash; Setting the scene</span>
         <h2>What we mean by &ldquo;violent crime&rdquo;</h2>
-        <p>Violent crime is not one thing. It includes the everyday property losses that empty out a wallet, and the rarer, deeper violations that reach into a person directly. The Royal Malaysia Police records both, across every district in the country.</p>
+        <p>Violent crime is <strong>not one thing</strong>. This dashboard separates raw count from risk, and separates broad categories from specific crime types.</p>
       </div>
       <div class="pure-u-1-2">
         <div class="stats-panel">
@@ -70,62 +82,71 @@
       </div>
     </div>
 
-    <!-- ===== SECTION 2: Volume vs Risk (alternating layout) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <!-- ===== SECTION 2: Volume vs Risk (paired side-by-side) ===== -->
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">02 &mdash; Volume vs risk</span>
         <h2>Two ways to count the same country</h2>
       </div>
+      <div class="pure-u-1-2">
+        <p>A raw count is the number of recorded cases. <strong>Selangor and KL carry the loudest count</strong>, but the <abbr title="Rate per 100,000: total cases divided by population, multiplied by 100,000. Compares places of different sizes fairly.">rate per 100,000</abbr> compares places more fairly by adjusting for population.</p>
+      </div>
     </div>
 
-    <!-- Row 1: text LEFT, bar chart RIGHT -->
+    <!-- Charts side by side: bar (left) + rate map (right) -->
     <div class="pure-g chart-row">
-      <div class="pure-u-1-2 text-col text-col-left">
-        <div class="chart-caption">VOLUME &mdash; raw cases</div>
-        <p>The most populated places carry the loudest count. Selangor and Kuala Lumpur &mdash; the economic centre of the country &mdash; together hold roughly a third of every violent crime recorded in 2023.</p>
-      </div>
       <div class="pure-u-1-2">
+        <div class="chart-caption">VOLUME &mdash; raw cases</div>
         <div id="vis1" class="vis-container"></div>
       </div>
-    </div>
-
-    <!-- Row 2: rate map LEFT, text RIGHT -->
-    <div class="pure-g chart-row">
       <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-2 text-col text-col-right">
         <div class="chart-caption">RISK &mdash; rate per 100,000</div>
-        <p>But scale is not the same thing as risk. Adjust for population and the country looks different &mdash; the states that loomed largest a moment ago shrink to ordinary, and the ones we barely noticed step forward.</p>
+        <div id="vis2" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 3: The flip (full width hero) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">03 &mdash; The flip, made visible</span>
         <h2>When the question changes, the ranking flips</h2>
-        <p>If volume tells one story and risk tells another, the cleanest way to see it is side by side. On the left, every state is ranked by how many cases were recorded. On the right, by how often a case touches one in every hundred thousand residents. Two states do something dramatic.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p>Volume and risk tell different stories &mdash; <strong>seen side by side, the ranking flips</strong>. On the left, states are ranked by case count; on the right, by rate per 100,000. Two states do something dramatic: <strong>KL rises to #1 by rate</strong> &mdash; the same volume falling on far fewer residents &mdash; and <strong>Penang climbs from #5 to #2</strong> for the same reason at a smaller scale.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
         <div id="vis3" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 4: Crime signatures (small multiples) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">04 &mdash; What kind of crime is where</span>
         <h2>Each state has its own crime signature</h2>
-        <p>Not every state experiences the same shape of harm. Some places see crime that wears down homes and vehicles; others see crime that reaches further, into the body itself. Each state's profile tells you something about its economy, its density, and its day-to-day rhythm.</p>
-        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <p><em>If volume and risk disagree, what is each state actually being asked to police?</em> Each state has a <strong>different shape of harm</strong>: its <abbr title="Crime signature: the mix of crime types that defines a place. Two states with similar totals can still face different problems.">crime signature</abbr>. Compare the mix within each mini-chart, not the length across states.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis4" class="vis-container smallmult-frame"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 5: Two surprises about safety (paired) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">05 &mdash; Two surprises about safety</span>
         <h2>The map disagrees with the instinct &mdash; twice</h2>
-        <p>The first surprise is that wealthier states are not safer overall. The second cuts the data differently: when you ask specifically where women face the highest risk of rape, the geography flips again. The poorest states are not the most dangerous, and the wealthiest places are not the safest &mdash; for women, the pattern is different still.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p>Two patterns push back on instinct. <strong>Wealthier states are not automatically safer</strong> — density and reporting may matter more than income. For rape risk, <strong>smaller states rise to the top</strong> because fewer cases divided by smaller female populations can produce higher per-resident rates.</p>
       </div>
     </div>
 
@@ -141,62 +162,138 @@
     </div>
 
     <!-- ===== SECTION 6: Crime across the years (streamgraph) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">06 &mdash; Crime across the years</span>
         <h2>The composition has shifted</h2>
-        <p>The years since 2016 tell a story of their own. Total violent crime fell sharply, and within that decline, the mix of crimes Malaysians faced has changed. The COVID-19 lockdowns left a clear footprint in the middle of the chart.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p><em>Pull back from 2023 and the picture has been changing for nearly a decade.</em> Total recorded crime has <strong>fallen sharply since 2016</strong>, and the mix has shifted within that decline. The COVID-19 lockdowns leave a clear footprint in the middle of the chart.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
         <div id="vis7" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 7: Who is harmed (gender area only) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">07 &mdash; Who is harmed</span>
         <h2>The line has fallen unevenly</h2>
-        <p>Behind every line on this chart is a household with one fewer person at the table. The homicide rate has dropped year after year, but not at the same speed for men and women. The shaded band between the two is the difference.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p>Behind every line is a household with one fewer person at the table. The homicide rate has <strong>fallen unevenly</strong> for men and women &mdash; the shaded band between is the difference.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
         <div id="vis8" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 8: Where it concentrates (districts) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">08 &mdash; Where it really concentrates</span>
         <h2>Beneath the state, ten specific districts carry the volume</h2>
-        <p>State-level numbers tell one story; district-level numbers tell another. The ten busiest police districts of 2023 cluster heavily in the Selangor urban belt, with single hotspots in Ipoh, Penang's Timur Laut and Kuala Lumpur's Dang Wangi. Inside every busy state, crime is concentrated in just a few places.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p>Inside every busy state, crime concentrates in <strong>just a few districts</strong>. Five of the 2023 top ten sit in Selangor's urban belt &mdash; marked here in muted purple &mdash; with further hotspots in Ipoh, Penang's Timur Laut, and KL's Dang Wangi.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
         <div id="vis9" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 9: Closing — the national mix (radial) ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">09 &mdash; Closing summary</span>
         <h2>One country, one year, in one circle</h2>
-        <p>A final view: the entire shape of Malaysia's 2023 violent crime as a single picture. The dominance of property crime in the country's day-to-day experience is immediately visible, as is the smaller but heavier presence of crimes against people.</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p><em>All of this is one slice of one year. Here is what it adds up to.</em> The whole year as one <abbr title="Composition: how the parts make up the whole. Each wedge is one crime type, sized by its share of total cases.">composition</abbr>: <strong>property crime dominates</strong> Malaysia's day-to-day picture; crimes against people are smaller in share but heavier in harm.</p>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
         <div id="vis10" class="vis-container"></div>
       </div>
     </div>
 
     <!-- ===== SECTION 10: Hierarchy — the sunburst ===== -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+    <div class="pure-g section-intro">
+      <div class="pure-u-1-2">
         <span class="section-number">10 &mdash; The same picture, with depth</span>
         <h2>From category to type to where it happens</h2>
-        <p>The closing view as a hierarchy. The inner ring splits the year's crime into its two broad families. The middle ring breaks each family into its specific types. The outer ring shows the five states that contribute most cases to each type. Hover any arc to drill into the number.</p>
-        <div id="vis11" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <p>The closing view as a <abbr title="Hierarchy: a nested structure showing how each part belongs to a larger whole.">hierarchy</abbr>. Each <strong>ring is one level of detail</strong> &mdash; from broad category, to specific crime, to which states drive each type.</p>
+      </div>
+    </div>
+
+    <div class="pure-g chart-row">
+      <div class="pure-u-2-3">
+        <div id="vis11" class="vis-container sunburst-frame"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="howto-panel">
+          <div class="howto-title">How to read this chart</div>
+          <div class="howto-row">
+            <span class="howto-ring">Inner ring</span>
+            <span>Broad crime family &mdash; assault or property.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Middle ring</span>
+            <span>Specific crime type within each family.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Outer ring</span>
+            <span>Top state contributors for each crime type; smaller state arcs are available on hover.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Arc size</span>
+            <span>Wider arc means more recorded cases in 2023.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Colour</span>
+            <span>Blue shades = assault-related types; gold shades = property-related types. Outer arcs inherit the colour of their crime type.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Labels</span>
+            <span>Only major arcs are labelled directly to keep the hierarchy readable.</span>
+          </div>
+          <div class="howto-row">
+            <span class="howto-ring">Hover</span>
+            <span>Reveals exact cases for any arc.</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ===== FOOTER ===== -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
-        <p>By Charvhi A/P L. Ramesh &middot; ID 35646837 &middot; FIT2179 Data Visualisation 2 &middot; May 2026<br>
-        Data sources:
-        <a href="https://data.gov.my/data-catalogue/crime_district" target="_blank">data.gov.my (PDRM)</a>,
-        <a href="https://open.dosm.gov.my/data-catalogue/population_state" target="_blank">open.dosm.gov.my (DOSM)</a>.</p>
+        <p>
+          <strong>Author:</strong> Charvhi A/P L. Ramesh &middot; ID 35646837 &middot; FIT2179 Data Visualisation 2 &middot; Semester 1, 2026 &middot; Submitted May 2026.<br>
+          <strong>Units:</strong> recorded cases, population-adjusted rates per 100,000 residents, and rape rates per 100,000 female residents.
+          <strong>Geography:</strong> Malaysia states and police districts.<br>
+          <strong>Data sources:</strong>
+          <a href="https://data.gov.my/data-catalogue/crime_district" target="_blank">data.gov.my &mdash; PDRM Crime Index, district level, 2016&ndash;2023 release</a>
+          and
+          <a href="https://open.dosm.gov.my/data-catalogue/population_state" target="_blank">open.dosm.gov.my &mdash; DOSM state population, poverty and income, 2023 release</a>.
+          Both datasets accessed May 2026 and combined on the <em>state</em> key for the volume/risk views and on <em>(state, year)</em> for the time-series views.<br>
+          <strong>Acknowledgement of AI use:</strong> annotation copy, CSS layout polish and grammar refinements were drafted with the help of an AI writing assistant; the dataset selection, idiom choices, analytical framing and final design decisions are the author's own.<br>
+          <strong>Source code:</strong> available in the GitHub repository accompanying this submission; released for academic review only, no redistribution licence.
+        </p>
       </div>
     </div>
 

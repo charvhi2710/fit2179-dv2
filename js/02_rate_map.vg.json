@@ -10,51 +10,22 @@
     "color": "#666"
   },
   "width": "container",
-  "height": 380,
-  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "height": 390,
+  "padding": {"left": 6, "right": 45, "top": 8, "bottom": 18},
   "autosize": {"type": "fit", "contains": "padding"},
   "background": null,
-  "projection": {
-    "type": "mercator",
-    "center": [109, 3.8],
-    "scale": 1400
-  },
+  "projection": {"type": "mercator", "center": [108, 4.0], "scale": 1450},
   "layer": [
     {
       "data": {"sphere": true},
-      "mark": {
-        "type": "geoshape",
-        "fill": "#e8f0f4",
-        "stroke": null
-      }
+      "mark": {"type": "geoshape", "fill": "#e8f0f4", "stroke": null}
     },
     {
       "data": {"graticule": {"step": [5, 5]}},
-      "mark": {
-        "type": "geoshape",
-        "filled": false,
-        "stroke": "#fff",
-        "strokeWidth": 0.7,
-        "strokeOpacity": 0.7
-      }
+      "mark": {"type": "geoshape", "filled": false, "stroke": "#fff", "strokeWidth": 0.7, "strokeOpacity": 0.7}
     },
     {
-      "data": {
-        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#f5f3ee",
-        "stroke": "#d8d4cb",
-        "strokeWidth": 0.5
-      }
-    },
-    {
-      "data": {
-        "url": "data/malaysia-states.topojson",
-        "format": {"type": "topojson", "feature": "states"}
-      },
+      "data": {"url": "data/malaysia-states.topojson", "format": {"type": "topojson", "feature": "states"}},
       "transform": [
         {
           "lookup": "properties.Name",
@@ -65,19 +36,12 @@
           }
         }
       ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#fff",
-        "strokeWidth": 0.7
-      },
+      "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.7},
       "encoding": {
         "color": {
           "field": "rate_per_100k",
           "type": "quantitative",
-          "scale": {
-            "scheme": "blues",
-            "domainMin": 0
-          },
+          "scale": {"scheme": "blues", "domainMin": 0},
           "legend": {
             "title": "Rate per 100,000 residents",
             "titleFont": "Open Sans",
@@ -85,7 +49,7 @@
             "titleFontSize": 11,
             "labelFontSize": 10,
             "orient": "bottom-left",
-            "gradientLength": 180,
+            "gradientLength": 160,
             "gradientThickness": 10
           }
         },
@@ -99,12 +63,10 @@
       }
     },
     {
-      "data": {
-        "values": [
-          {"lon": 100.3, "lat": 6.6, "label": "Penang — highest rate"},
-          {"lon": 117.0, "lat": 7.4, "label": "Sabah — lowest rate"}
-        ]
-      },
+      "data": {"values": [
+        {"lon": 100.0, "lat": 8.3, "label": "Penang: high rate after population"},
+        {"lon": 107.5, "lat": 6.8, "label": "Sabah: high count, lower rate"}
+      ]},
       "mark": {
         "type": "text",
         "fontSize": 11,
@@ -112,7 +74,7 @@
         "font": "Open Sans",
         "color": "#1e3a5f",
         "align": "left",
-        "dx": 4
+        "limit": 190
       },
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},

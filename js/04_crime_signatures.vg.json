@@ -3,15 +3,15 @@
   "title": {
     "text": "Each state has its own crime signature.",
     "subtitle": [
-      "Navy = violent (assault) crimes · Gold = property crimes. Bar lengths are scaled within each state.",
-      "Sabah and Sarawak skew strongly toward property crime; KL and Penang carry visibly higher robbery and causing-injury shares."
+      "Read each mini-chart within its state: bars are scaled independently, so shape matters more than length across states.",
+      "Navy = assault crimes; gold = property crimes. Category order is fixed in every panel."
     ],
     "anchor": "start",
     "fontSize": 13,
     "font": "Open Sans",
     "fontWeight": 400,
     "color": "#666",
-    "subtitleFontSize": 11,
+    "subtitleFontSize": 12,
     "subtitleColor": "#888",
     "subtitleFont": "Open Sans",
     "subtitlePadding": 6
@@ -34,16 +34,17 @@
     "tooltip": true,
     "cornerRadiusEnd": 1
   },
-  "width": 140,
-  "height": 110,
+  "width": 160,
+  "height": 125,
   "encoding": {
     "facet": {
       "field": "state",
       "type": "nominal",
-      "columns": 4,
+      "columns": 5,
+      "spacing": 22,
       "sort": ["Selangor", "Johor", "Kuala Lumpur", "Perak", "Penang", "Kedah", "Sarawak", "Sabah", "Negeri Sembilan", "Pahang", "Kelantan", "Melaka", "Terengganu", "Perlis"],
       "header": {
-        "labelFontSize": 13,
+        "labelFontSize": 12,
         "labelFontWeight": 700,
         "labelColor": "#1a1a1a",
         "labelFont": "Open Sans",

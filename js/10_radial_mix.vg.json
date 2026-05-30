@@ -3,8 +3,8 @@
   "title": {
     "text": "The shape of Malaysia's 2023 violent crime, in one circle.",
     "subtitle": [
-      "Each segment is one crime type; longer arcs mean more cases.",
-      "Theft (other) and vehicle theft together dominate the picture — property crime is the country's everyday safety issue."
+      "Each wedge = one crime type. Longer arc = larger share of recorded cases.",
+      "Navy shades = assault-related; gold shades = property-related."
     ],
     "anchor": "start",
     "fontSize": 13,
@@ -17,44 +17,57 @@
     "subtitlePadding": 6
   },
   "width": "container",
-  "height": 420,
-  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
-  "autosize": {"type": "fit", "contains": "padding"},
+  "height": 480,
+  "padding": {
+    "left": 6,
+    "right": 130,
+    "top": 8,
+    "bottom": 8
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "background": null,
-  "data": {"url": "data/crime_types_by_year.json"},
+  "data": {
+    "url": "data/crime_types_by_year.json"
+  },
   "transform": [
     {"filter": "datum.year === 2023"},
     {
       "aggregate": [{"op": "sum", "field": "total", "as": "cases"}],
       "groupby": ["type_label", "category"]
-    }
+    },
+    {
+      "joinaggregate": [{"op": "sum", "field": "cases", "as": "total_cases"}]
+    },
+    {"calculate": "datum.cases / datum.total_cases", "as": "pct"},
+    {"calculate": "datum.pct < 0.01 ? '<1%' : format(datum.pct, '.0%')", "as": "pct_label"}
   ],
   "layer": [
     {
       "mark": {
         "type": "arc",
-        "innerRadius": 60,
+        "innerRadius": 78,
+        "outerRadius": 200,
         "stroke": "#fff",
         "strokeWidth": 2,
         "tooltip": true
       },
       "encoding": {
-        "theta": {
-          "field": "cases",
-          "type": "quantitative",
-          "stack": true
-        },
-        "radius": {
-          "field": "cases",
-          "type": "quantitative",
-          "scale": {"type": "sqrt", "zero": true, "rangeMin": 60, "rangeMax": 180}
-        },
+        "theta": {"field": "cases", "type": "quantitative", "stack": true},
         "color": {
           "field": "type_label",
           "type": "nominal",
           "scale": {
-            "domain": ["Causing injury", "Murder", "Rape", "Robbery", "Break-in", "Vehicle theft", "Theft (other)"],
-            "range": ["#1e3a5f", "#2c5f8a", "#5085b0", "#88aed3", "#a47e1b", "#c9a553", "#e2c98f"]
+            "domain": [
+              "Causing injury", "Murder", "Rape", "Robbery",
+              "Break-in", "Vehicle theft", "Theft (other)"
+            ],
+            "range": [
+              "#34547a", "#4a78a3", "#6e9ac4", "#9bbdde",
+              "#a47e1b", "#c9a553", "#e2c98f"
+            ]
           },
           "legend": {
             "title": "Crime type",
@@ -64,25 +77,54 @@
             "labelFontSize": 11,
             "orient": "right",
             "symbolType": "square",
-            "symbolSize": 120
+            "symbolSize": 130,
+            "offset": 6,
+            "padding": 0,
+            "rowPadding": 4
           }
         },
         "order": {
           "field": "type_label",
-          "sort": ["Causing injury", "Murder", "Rape", "Robbery", "Break-in", "Vehicle theft", "Theft (other)"]
+          "sort": [
+            "Causing injury", "Murder", "Rape", "Robbery",
+            "Break-in", "Vehicle theft", "Theft (other)"
+          ]
         },
         "tooltip": [
           {"field": "type_label", "title": "Crime type"},
           {"field": "category", "title": "Category"},
-          {"field": "cases", "title": "Cases (2023)", "format": ","}
+          {"field": "cases", "title": "Cases (2023)", "format": ","},
+          {"field": "pct_label", "title": "Share of total"}
         ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.pct >= 0.07"}],
+      "mark": {
+        "type": "text",
+        "radius": 228,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "font": "Open Sans",
+        "color": "#1a1a1a"
+      },
+      "encoding": {
+        "theta": {"field": "cases", "type": "quantitative", "stack": true},
+        "text": {"field": "pct_label"},
+        "order": {
+          "field": "type_label",
+          "sort": [
+            "Causing injury", "Murder", "Rape", "Robbery",
+            "Break-in", "Vehicle theft", "Theft (other)"
+          ]
+        }
       }
     }
   ],
-  "view": {"stroke": null},
   "config": {
     "view": {"stroke": null},
     "background": null,
-    "font": "Open Sans"
+    "font": "Open Sans",
+    "axis": {"grid": false}
   }
 }

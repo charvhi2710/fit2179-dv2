@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Where women face the highest risk of rape.",
-    "subtitle": "Rape cases per 100,000 female residents, by state, 2023. Smaller states sit at the top — a different geography from total violent crime.",
+    "subtitle": "Per 100,000 female residents, by state, 2023. Smaller states top the list.",
     "anchor": "start",
     "fontSize": 13,
     "font": "Open Sans",
@@ -14,62 +14,37 @@
     "subtitlePadding": 6
   },
   "width": "container",
-  "height": 380,
-  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
+  "height": 410,
+  "padding": {"left": 4, "right": 40, "top": 8, "bottom": 8},
   "autosize": {"type": "fit", "contains": "padding"},
   "background": null,
   "data": {"url": "data/rape_rate_by_state.json"},
   "layer": [
     {
-      "mark": {
-        "type": "rule",
-        "color": "#a47e1b",
-        "strokeWidth": 2,
-        "tooltip": true
-      },
+      "mark": {"type": "rule", "color": "#2c5f8a", "strokeWidth": 2, "tooltip": true},
       "encoding": {
         "y": {
-          "field": "state",
-          "type": "nominal",
-          "sort": "-x",
-          "title": null,
+          "field": "state", "type": "nominal", "sort": "-x", "title": null,
           "axis": {
-            "labelFontSize": 12,
-            "labelFont": "Open Sans",
-            "labelColor": "#333",
-            "labelPadding": 8,
-            "domain": false,
-            "ticks": false
+            "labelFontSize": 12, "labelFont": "Open Sans", "labelColor": "#333",
+            "labelPadding": 8, "domain": false, "ticks": false
           }
         },
         "x": {
-          "field": "rape_rate_per_100k_female",
-          "type": "quantitative",
+          "field": "rape_rate_per_100k_female", "type": "quantitative",
           "title": "Rape rate per 100,000 female residents",
-          "scale": {"domain": [0, 22], "nice": true},
+          "scale": {"domain": [0, 24], "nice": true},
           "axis": {
-            "labelFontSize": 11,
-            "labelFont": "Open Sans",
-            "titleFont": "Open Sans",
-            "titleFontSize": 12,
-            "titleColor": "#666",
-            "titlePadding": 10,
-            "grid": true,
-            "gridColor": "#eee",
-            "domain": false,
-            "ticks": false
+            "labelFontSize": 11, "labelFont": "Open Sans",
+            "titleFont": "Open Sans", "titleFontSize": 12, "titleColor": "#666", "titlePadding": 10,
+            "grid": true, "gridColor": "#eee", "domain": false, "ticks": false
           }
         },
         "x2": {"value": 0}
       }
     },
     {
-      "mark": {
-        "type": "circle",
-        "size": 180,
-        "color": "#a47e1b",
-        "tooltip": true
-      },
+      "mark": {"type": "circle", "size": 180, "color": "#2c5f8a", "tooltip": true},
       "encoding": {
         "y": {"field": "state", "type": "nominal", "sort": "-x"},
         "x": {"field": "rape_rate_per_100k_female", "type": "quantitative"},
@@ -79,27 +54,6 @@
           {"field": "rape_cases", "title": "Reported cases (2023)"},
           {"field": "female_population", "title": "Female population", "format": ","}
         ]
-      }
-    },
-    {
-      "data": {"values": [
-        {"x": 19, "y": "Perlis", "label": "Smaller states top the list"},
-        {"x": 12, "y": "Penang", "label": "Wealthy states sit mid-pack"}
-      ]},
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 18,
-        "fontSize": 11,
-        "fontStyle": "italic",
-        "font": "Open Sans",
-        "color": "#1e3a5f"
-      },
-      "encoding": {
-        "x": {"field": "x", "type": "quantitative"},
-        "y": {"field": "y", "type": "nominal"},
-        "text": {"field": "label"}
       }
     }
   ],

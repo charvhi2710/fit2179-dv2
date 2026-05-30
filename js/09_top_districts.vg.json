@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Inside the states — the ten districts that record the most violent crime.",
-    "subtitle": "2023 cases by police district. Most concentrate in Selangor's urban belt, with single hotspots in Ipoh, Penang and KL.",
+    "text": "A few urban districts carry much of the 2023 volume.",
+    "subtitle": "The top ten districts record 3,030 cases; five are in Selangor's urban belt.",
     "anchor": "start",
     "fontSize": 13,
     "font": "Open Sans",
@@ -14,16 +14,26 @@
     "subtitlePadding": 6
   },
   "width": "container",
-  "height": 340,
-  "padding": {"left": 0, "right": 12, "top": 8, "bottom": 8},
-  "autosize": {"type": "fit", "contains": "padding"},
+  "height": 440,
+  "padding": {
+    "left": 6,
+    "right": 190,
+    "top": 8,
+    "bottom": 8
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "background": null,
-  "data": {"url": "data/top10_districts_violent.json"},
+  "data": {
+    "url": "data/top10_districts_violent.json"
+  },
   "layer": [
     {
       "mark": {
         "type": "rule",
-        "color": "#2c3e50",
+        "color": "#4a5563",
         "strokeWidth": 2,
         "tooltip": true
       },
@@ -31,13 +41,25 @@
         "y": {
           "field": "district",
           "type": "nominal",
-          "sort": "-x",
+          "sort": [
+            "Dang Wangi",
+            "Gombak",
+            "Ipoh",
+            "Johor Bahru Selatan",
+            "Kajang",
+            "Klang Selatan",
+            "Klang Utara",
+            "Melaka Tengah",
+            "Petaling Jaya",
+            "Timur Laut"
+          ],
           "title": null,
           "axis": {
             "labelFontSize": 12,
             "labelFont": "Open Sans",
             "labelColor": "#333",
             "labelPadding": 8,
+            "labelLimit": 180,
             "domain": false,
             "ticks": false
           }
@@ -46,6 +68,9 @@
           "field": "violent_crimes",
           "type": "quantitative",
           "title": "Violent crime cases (2023)",
+          "scale": {
+            "domain": [0, 430]
+          },
           "axis": {
             "labelFontSize": 11,
             "labelFont": "Open Sans",
@@ -60,27 +85,68 @@
             "format": ",d"
           }
         },
-        "x2": {"value": 0}
+        "x2": {
+          "value": 0
+        }
       }
     },
     {
       "mark": {
         "type": "circle",
         "size": 180,
-        "color": "#2c3e50",
         "tooltip": true
       },
       "encoding": {
-        "y": {"field": "district", "type": "nominal", "sort": "-x"},
-        "x": {"field": "violent_crimes", "type": "quantitative"},
+        "y": {
+          "field": "district",
+          "type": "nominal",
+          "sort": [
+            "Dang Wangi",
+            "Gombak",
+            "Ipoh",
+            "Johor Bahru Selatan",
+            "Kajang",
+            "Klang Selatan",
+            "Klang Utara",
+            "Melaka Tengah",
+            "Petaling Jaya",
+            "Timur Laut"
+          ]
+        },
+        "x": {
+          "field": "violent_crimes",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.state === 'Selangor'",
+            "value": "#6B5B95"
+          },
+          "value": "#4a5563"
+        },
         "tooltip": [
-          {"field": "district", "title": "District"},
-          {"field": "state", "title": "State"},
-          {"field": "violent_crimes", "title": "Violent crime cases", "format": ","}
+          {
+            "field": "district",
+            "title": "District"
+          },
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "violent_crimes",
+            "title": "Violent crime cases",
+            "format": ","
+          }
         ]
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.state !== 'Selangor'"
+        }
+      ],
       "mark": {
         "type": "text",
         "align": "left",
@@ -91,32 +157,93 @@
         "color": "#666"
       },
       "encoding": {
-        "y": {"field": "district", "type": "nominal", "sort": "-x"},
-        "x": {"field": "violent_crimes", "type": "quantitative"},
-        "text": {"field": "state"}
+        "y": {
+          "field": "district",
+          "type": "nominal",
+          "sort": [
+            "Dang Wangi",
+            "Gombak",
+            "Ipoh",
+            "Johor Bahru Selatan",
+            "Kajang",
+            "Klang Selatan",
+            "Klang Utara",
+            "Melaka Tengah",
+            "Petaling Jaya",
+            "Timur Laut"
+          ]
+        },
+        "x": {
+          "field": "violent_crimes",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
       }
     },
     {
-      "data": {"values": [{"x": 380, "district": "Klang Selatan", "label": "5 of the top 10 sit inside Selangor"}]},
+      "data": {
+        "values": [
+          {
+            "district": "Kajang",
+            "x": 388,
+            "label": "Selangor appears repeatedly."
+          },
+          {
+            "district": "Klang Selatan",
+            "x": 388,
+            "label": "5 of the top 10 districts are here."
+          },
+          {
+            "district": "Klang Utara",
+            "x": 388,
+            "label": "The volume is concentrated, not spread evenly."
+          }
+        ]
+      },
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "left",
         "baseline": "middle",
+        "dx": 0,
         "fontSize": 11,
         "fontStyle": "italic",
         "fontWeight": 600,
         "font": "Open Sans",
-        "color": "#a47e1b"
+        "color": "#574879"
       },
       "encoding": {
-        "x": {"field": "x", "type": "quantitative"},
-        "y": {"field": "district", "type": "nominal", "sort": "-x"},
-        "text": {"field": "label"}
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "district",
+          "type": "nominal",
+          "sort": [
+            "Dang Wangi",
+            "Gombak",
+            "Ipoh",
+            "Johor Bahru Selatan",
+            "Kajang",
+            "Klang Selatan",
+            "Klang Utara",
+            "Melaka Tengah",
+            "Petaling Jaya",
+            "Timur Laut"
+          ]
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "background": null,
     "font": "Open Sans"
   }

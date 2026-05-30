@@ -2,6 +2,7 @@
 
 body * {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,13 +11,13 @@ body {
 }
 
 .page {
-  max-width: 1100px;
+  max-width: 1120px;
   background-color: white;
   margin: auto;
-  padding: 50px 60px;
+  padding: 56px 64px 48px;
 }
 
-/* ===== TYPOGRAPHY HIERARCHY (course-aligned) ===== */
+/* ===== TYPOGRAPHY HIERARCHY ===== */
 
 h1 {
   font-weight: 800;
@@ -32,18 +33,36 @@ h1 {
   font-weight: 400;
   line-height: 1.5;
   color: #555;
-  margin: 0 0 30px 0;
+  margin: 0;
   max-width: 55ch;
-  border-bottom: 1px solid #e6e6e6;
-  padding-bottom: 30px;
+}
+
+.scope-note {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #666;
+  margin: 16px 0 0 0;
+  max-width: 55ch;
+}
+
+.scope-note strong {
+  color: #1e3a5f;
+  font-weight: 700;
+}
+
+.scope-note em {
+  font-style: italic;
+  color: #444;
 }
 
 h2 {
   font-weight: 800;
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   margin: 0 0 12px 0;
-  max-width: 55ch;          /* wide enough for natural single-line headings */
+  max-width: 30ch;
+  color: #1a1a1a;
 }
 
 .section-number {
@@ -52,7 +71,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #1e3a5f;          /* deep navy — STRUCTURAL ONLY (not for chart data) */
+  color: #1e3a5f;        /* navy — STRUCTURAL only, not for chart data */
   margin-bottom: 8px;
 }
 
@@ -60,52 +79,86 @@ p {
   font-size: 16px;
   line-height: 1.65;
   color: #1a1a1a;
-  max-width: 50ch;        /* hard ceiling at ~9–11 words per line */
+  max-width: 50ch;
   margin: 0 0 16px 0;
+}
+
+p strong, .text-col p strong {
+  font-weight: 700;
+  color: #1e3a5f;
 }
 
 a {
   color: #1e3a5f;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== LAYOUT — CONSISTENT SECTION SPACING =====
+   One predictable rhythm:
+   - Section intro (heading + paragraph)  ─┐
+                                            │ 18px
+   - Chart card                            ─┘
 
-/* Defensive flex on pure-g to guarantee side-by-side layout */
+                                            } 56px between sections
+   - Next section intro                   ─┐
+*/
+
 .pure-g {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 40px;       /* breathing room between sections */
+  margin-bottom: 56px;        /* default: gap between sections */
+  align-items: stretch;
 }
 
-/* Tighten gap between paired section heading and its chart row */
-.pure-g + .pure-g {
-  margin-top: -16px;
+/* Section intro row sits TIGHT to its chart row */
+.section-intro {
+  margin-bottom: 18px;
+  align-items: start;
 }
+
+/* The last row before the footer */
+.pure-g:last-of-type {
+  margin-bottom: 32px;
+}
+
+/* ===== CHART CARDS ===== */
 
 .vis-container {
   width: 100%;
-  max-width: 720px;          /* constrain in full-width sections */
-  margin: 16px 0 0 0;
-  background: none;
-  border: none;
-  padding: 0;
+  margin: 0;
+  background: #fcfcfa;
+  border: 1px solid #ebe8df;
+  border-radius: 6px;
+  padding: 22px 24px;
+  box-sizing: border-box;
+  min-height: 460px;
+  overflow: hidden;
 }
 
-/* Hairline above standalone (full-width) charts */
-.pure-u-1-1 > .vis-container::before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: #e6e6e6;
-  margin-bottom: 24px;
+/* Half-column charts: equal-height for clean sightlines */
+.pure-u-1-2 .vis-container {
+  min-height: 472px;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 0;
 }
 
-.description-right {
-  padding-left: 20px;
+/* Full-width vis-container spans the page */
+.pure-u-1-1 > .vis-container {
+  max-width: 100%;
+  min-height: 500px;
 }
 
-.description-left {
-  padding-right: 20px;
+/* Section 04 small multiples — let card hug the chart, no dead space below */
+.pure-u-1-1 > .vis-container.smallmult-frame {
+  min-height: 0;
+  padding: 22px 24px 24px;
+}
+
+/* Section 10 sunburst card — uses card width fully */
+.pure-u-1-1 > .vis-container.sunburst-frame,
+.pure-u-2-3 > .vis-container.sunburst-frame {
+  min-height: 560px;
+  padding: 22px 16px 22px 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -115,7 +168,7 @@ a {
   color: #888;
   border-top: 1px solid #e6e6e6;
   padding-top: 20px;
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .small-font a {
@@ -127,6 +180,7 @@ a {
 #vis11 {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Small caption above each chart (used in paired layouts) */
@@ -136,20 +190,109 @@ a {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #666;
-  margin: 16px 0 8px 0;
+  margin: 0 0 8px 0;
 }
 
-/* Alternating text-and-chart row layout (Section 2 editorial spread) */
+/* Side-by-side rows: stretch children to equal height */
 .chart-row {
-  align-items: center;          /* vertically centre text beside chart */
+  align-items: stretch;
 }
 
+.chart-row > .pure-u-1-2,
+.pure-g > .pure-u-1-2:has(.vis-container) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The Section 01 row mixes text (left) with stats panel (right) — keep centred */
+.editorial-row {
+  align-items: center;
+}
+
+/* ===== HERO ===== */
+
+.hero-grid {
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 40px;
+  margin-bottom: 56px;
+}
+
+.hero-copy {
+  padding-right: 28px;
+}
+
+.hero-panel-wrap {
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-panel {
+  width: 100%;
+  border-left: 3px solid #1e3a5f;
+  background: #fcfcfa;
+  padding: 18px 0 18px 28px;
+}
+
+.hero-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 12px;
+}
+
+.hero-panel p {
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  max-width: 43ch;
+}
+
+.hero-stat-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  color: #444;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.hero-stat-row b {
+  display: inline-block;
+  min-width: 62px;
+  color: #1e3a5f;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ===== SECTION INTRO (two-column heading + paragraph) ===== */
+
+.section-intro > .pure-u-1-2:first-child {
+  padding-right: 24px;
+}
+
+.section-intro > .pure-u-1-2:last-child {
+  padding-left: 24px;
+}
+
+.section-intro h2 {
+  margin: 4px 0 0 0;
+}
+
+.section-intro p {
+  margin: 0;
+  max-width: 50ch;
+}
+
+/* Text column inside Section 01 editorial row */
 .text-col p {
   font-size: 16px;
   line-height: 1.65;
   color: #1a1a1a;
   margin: 12px 0 0 0;
-  max-width: 42ch;              /* tighter for half-column text */
+  max-width: 42ch;
 }
 
 .text-col-left {
@@ -161,7 +304,53 @@ a {
   padding-right: 0;
 }
 
-/* Stats panel (Section 01 — scope sidebar) */
+/* ===== "HOW TO READ" SIDEBAR (Section 10 sunburst) ===== */
+
+.howto-panel {
+  border-left: 3px solid #1e3a5f;
+  padding: 6px 0 6px 24px;
+  margin: 4px 0;
+}
+
+.howto-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1e3a5f;
+  margin-bottom: 14px;
+}
+
+.howto-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 11px;
+  gap: 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #333;
+}
+
+.howto-row:last-child {
+  margin-bottom: 0;
+}
+
+.howto-ring {
+  font-weight: 700;
+  color: #1e3a5f;
+  min-width: 78px;
+  font-size: 12px;
+}
+
+/* Key-term inline glossary tooltip-style */
+abbr {
+  border-bottom: 1px dotted #888;
+  text-decoration: none;
+  cursor: help;
+}
+
+/* ===== STATS PANEL (Section 01 scope sidebar) ===== */
+
 .stats-panel {
   border-left: 3px solid #1e3a5f;
   padding: 6px 0 6px 28px;
@@ -211,13 +400,8 @@ a {
   margin-top: 2px;
 }
 
-/* In paired layouts, give each half a bit of breathing room */
-.pure-u-1-2 .vis-container {
-  margin-top: 8px;
-  max-width: 100%;          /* override the 720px constraint when in a half column */
-}
+/* ===== GRID WIDTHS (defensive Pure.css overrides) ===== */
 
-/* Explicit half-column width (defensive — Pure.css should do this) */
 .pure-u-1-2 {
   width: 50%;
   padding-right: 12px;
@@ -228,7 +412,83 @@ a {
   padding-left: 12px;
 }
 
-/* Full-width column */
+.pure-u-2-3 {
+  width: 66.6667%;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+.pure-u-1-3 {
+  width: 33.3333%;
+  padding-left: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* centre the how-to-read panel vertically */
+}
+
 .pure-u-1-1 {
   width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .page {
+    padding: 36px 28px;
+  }
+
+  .pure-u-1-2,
+  .pure-u-2-3,
+  .pure-u-1-3 {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .section-intro > .pure-u-1-2:first-child,
+  .section-intro > .pure-u-1-2:last-child,
+  .text-col-left,
+  .text-col-right,
+  .hero-copy {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pure-g {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .hero-panel {
+    margin-top: 24px;
+    padding-left: 20px;
+  }
+
+  .vis-container,
+  .pure-u-1-2 .vis-container,
+  .pure-u-1-1 > .vis-container {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 28px 18px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p,
+  .text-col p {
+    font-size: 15px;
+  }
 }
