@@ -176,6 +176,34 @@ a {
   text-decoration: underline;
 }
 
+/* Two-column footer — balances the metadata block so the right margin
+   does not sit empty. Author/Units/Geography/Data on left; AI use +
+   Source code on right. Collapses to one column at narrow breakpoints. */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-grid p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+  max-width: none;
+}
+
+.footer-grid p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 /* Centre fixed-width sunburst SVG within its container */
 #vis11 {
   display: flex;

@@ -64,7 +64,7 @@
     },
     {
       "data": {"values": [
-        {"lon": 100.0, "lat": 8.3, "label": "Penang: high rate after population"},
+        {"lon": 100.0, "lat": 7.3, "label": "Penang: high rate after population"},
         {"lon": 107.5, "lat": 6.8, "label": "Sabah: high count, lower rate"}
       ]},
       "mark": {
