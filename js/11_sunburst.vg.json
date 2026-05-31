@@ -100,8 +100,8 @@
         "update": {
           "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
           "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
-          "fontSize": {"value": 13},
-          "fontWeight": {"value": 700},
+          "fontSize": {"value": 11},
+          "fontWeight": {"value": 600},
           "fill": {"value": "#ffffff"},
           "text": [
             {"test": "datum.depth === 1", "field": "name"},
@@ -123,13 +123,15 @@
           "baseline": {"value": "middle"}
         },
         "update": {
-          "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
+          "radius": {
+  "signal": "datum.depth === 2 && datum.name === 'Vehicle theft' ? ((datum.r0 + datum.r1) / 2 - 8) : ((datum.r0 + datum.r1) / 2)"
+},
           "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
           "fontSize": {"value": 11},
           "fontWeight": {"value": 600},
           "fill": [
             {"test": "datum.depth === 2 && (datum.name === 'Causing injury' || datum.name === 'Murder')", "value": "#ffffff"},
-            {"value": "#1a1a1a"}
+            {"value": "#ffffff"}
           ],
           "text": [
             {"test": "datum.depth === 2 && (datum.a1 - datum.a0) > 0.22", "field": "name"},
