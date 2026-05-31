@@ -1,11 +1,30 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Sunburst: category > crime type > state contributors (Malaysia 2023).",
+  "description": "Sunburst: category > crime type > state contributors (Malaysia 2023), with external black callout labels pointing directly from each segment.",
   "width": 600,
   "height": 540,
   "padding": 8,
   "autosize": "none",
   "background": "transparent",
+
+  "signals": [
+    {
+      "name": "cx",
+      "update": "width / 2"
+    },
+    {
+      "name": "cy",
+      "update": "height / 2"
+    },
+    {
+      "name": "outerRadius",
+      "update": "min(width, height) / 2 - 85"
+    },
+    {
+      "name": "labelRadius",
+      "update": "outerRadius + 52"
+    }
+  ],
 
   "data": [
     {
@@ -25,10 +44,64 @@
             "order": "descending"
           },
           "size": [
-            {"signal": "2 * PI"},
-            {"signal": "min(width, height) / 2 - 30"}
+            {
+              "signal": "2 * PI"
+            },
+            {
+              "signal": "outerRadius"
+            }
           ],
           "as": ["a0", "r0", "a1", "r1", "depth", "children"]
+        }
+      ]
+    },
+    {
+      "name": "calloutLabels",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1 || (datum.depth === 2 && (datum.a1 - datum.a0) > 0.16)"
+        },
+        {
+          "type": "formula",
+          "as": "midAngle",
+          "expr": "(datum.a0 + datum.a1) / 2"
+        },
+        {
+          "type": "formula",
+          "as": "lineStartX",
+          "expr": "cx + (datum.r1 + 2) * sin(datum.midAngle)"
+        },
+        {
+          "type": "formula",
+          "as": "lineStartY",
+          "expr": "cy - (datum.r1 + 2) * cos(datum.midAngle)"
+        },
+        {
+          "type": "formula",
+          "as": "labelRadiusAdj",
+          "expr": "datum.name === 'Vehicle theft' ? labelRadius - 38 : labelRadius"
+        },
+        {
+          "type": "formula",
+          "as": "labelAnchorX",
+          "expr": "cx + datum.labelRadiusAdj * sin(datum.midAngle)"
+        },
+        {
+          "type": "formula",
+          "as": "labelAnchorY",
+          "expr": "cy - datum.labelRadiusAdj * cos(datum.midAngle)"
+        },
+        {
+          "type": "formula",
+          "as": "labelAlign",
+          "expr": "sin(datum.midAngle) > 0.15 ? 'left' : sin(datum.midAngle) < -0.15 ? 'right' : 'center'"
+        },
+        {
+          "type": "formula",
+          "as": "labelDx",
+          "expr": "datum.name === 'Vehicle theft' ? 4 : datum.labelAlign === 'left' ? 8 : datum.labelAlign === 'right' ? -8 : 0"
         }
       ]
     }
@@ -39,12 +112,22 @@
       "name": "typeColor",
       "type": "ordinal",
       "domain": [
-        "Causing injury", "Murder", "Rape", "Robbery",
-        "Break-in", "Vehicle theft", "Theft (other)"
+        "Causing injury",
+        "Murder",
+        "Rape",
+        "Robbery",
+        "Break-in",
+        "Vehicle theft",
+        "Theft (other)"
       ],
       "range": [
-        "#34547a", "#4a78a3", "#6e9ac4", "#9bbdde",
-        "#a47e1b", "#c9a553", "#e2c98f"
+        "#34547a",
+        "#4a78a3",
+        "#6e9ac4",
+        "#9bbdde",
+        "#a47e1b",
+        "#c9a553",
+        "#e2c98f"
       ]
     }
   ],
@@ -52,91 +135,151 @@
   "marks": [
     {
       "type": "arc",
-      "from": {"data": "tree"},
+      "from": {
+        "data": "tree"
+      },
       "encode": {
         "enter": {
-          "x": {"signal": "width / 2"},
-          "y": {"signal": "height / 2"},
+          "x": {
+            "signal": "cx"
+          },
+          "y": {
+            "signal": "cy"
+          },
           "tooltip": {
             "signal": "datum.depth === 0 ? null : {title: datum.name, cases: format(datum.value, ',d')}"
           }
         },
         "update": {
-          "startAngle": {"field": "a0"},
-          "endAngle": {"field": "a1"},
-          "innerRadius": {"field": "r0"},
-          "outerRadius": {"field": "r1"},
-          "stroke": {"value": "#ffffff"},
-          "strokeWidth": {"value": 1.4},
+          "startAngle": {
+            "field": "a0"
+          },
+          "endAngle": {
+            "field": "a1"
+          },
+          "innerRadius": {
+            "field": "r0"
+          },
+          "outerRadius": {
+            "field": "r1"
+          },
+          "stroke": {
+            "value": "#ffffff"
+          },
+          "strokeWidth": {
+            "value": 1.4
+          },
           "fill": [
-            {"test": "datum.depth === 0", "value": "#ffffff"},
-            {"test": "datum.depth === 1 && datum.name === 'Assault'", "value": "#3d5775"},
-            {"test": "datum.depth === 1 && datum.name === 'Property'", "value": "#b88d35"},
-            {"test": "datum.depth === 2", "scale": "typeColor", "field": "name"},
-            {"test": "datum.depth >= 3", "scale": "typeColor", "field": "type"}
+            {
+              "test": "datum.depth === 0",
+              "value": "#ffffff"
+            },
+            {
+              "test": "datum.depth === 1 && datum.name === 'Assault'",
+              "value": "#3d5775"
+            },
+            {
+              "test": "datum.depth === 1 && datum.name === 'Property'",
+              "value": "#b88d35"
+            },
+            {
+              "test": "datum.depth === 2",
+              "scale": "typeColor",
+              "field": "name"
+            },
+            {
+              "test": "datum.depth >= 3",
+              "scale": "typeColor",
+              "field": "type"
+            }
           ],
           "fillOpacity": [
-            {"test": "datum.depth === 3", "value": 0.6},
-            {"value": 1}
+            {
+              "test": "datum.depth === 3",
+              "value": 0.6
+            },
+            {
+              "value": 1
+            }
           ]
         },
         "hover": {
-          "fillOpacity": {"value": 0.85}
+          "fillOpacity": {
+            "value": 0.85
+          }
         }
       }
     },
-
     {
-      "type": "text",
-      "from": {"data": "tree"},
+      "type": "rule",
+      "from": {
+        "data": "calloutLabels"
+      },
       "encode": {
-        "enter": {
-          "x": {"signal": "width / 2"},
-          "y": {"signal": "height / 2"},
-          "font": {"value": "Open Sans"},
-          "align": {"value": "center"},
-          "baseline": {"value": "middle"}
-        },
         "update": {
-          "radius": {"signal": "(datum.r0 + datum.r1) / 2"},
-          "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
-          "fontSize": {"value": 11},
-          "fontWeight": {"value": 600},
-          "fill": {"value": "#ffffff"},
-          "text": [
-            {"test": "datum.depth === 1", "field": "name"},
-            {"value": ""}
-          ]
+          "x": {
+            "field": "lineStartX"
+          },
+          "y": {
+            "field": "lineStartY"
+          },
+          "x2": {
+            "field": "labelAnchorX"
+          },
+          "y2": {
+            "field": "labelAnchorY"
+          },
+          "stroke": {
+            "value": "#111111"
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "strokeOpacity": {
+            "value": 0.75
+          }
         }
       }
     },
-
     {
       "type": "text",
-      "from": {"data": "tree"},
+      "from": {
+        "data": "calloutLabels"
+      },
       "encode": {
         "enter": {
-          "x": {"signal": "width / 2"},
-          "y": {"signal": "height / 2"},
-          "font": {"value": "Open Sans"},
-          "align": {"value": "center"},
-          "baseline": {"value": "middle"}
+          "font": {
+            "value": "Open Sans"
+          },
+          "baseline": {
+            "value": "middle"
+          }
         },
         "update": {
-          "radius": {
-  "signal": "datum.depth === 2 && datum.name === 'Vehicle theft' ? ((datum.r0 + datum.r1) / 2 - 8) : ((datum.r0 + datum.r1) / 2)"
-},
-          "theta": {"signal": "(datum.a0 + datum.a1) / 2"},
-          "fontSize": {"value": 11},
-          "fontWeight": {"value": 600},
-          "fill": [
-            {"test": "datum.depth === 2 && (datum.name === 'Causing injury' || datum.name === 'Murder')", "value": "#ffffff"},
-            {"value": "#ffffff"}
-          ],
-          "text": [
-            {"test": "datum.depth === 2 && (datum.a1 - datum.a0) > 0.22", "field": "name"},
-            {"value": ""}
-          ]
+          "x": {
+            "field": "labelAnchorX"
+          },
+          "y": {
+            "field": "labelAnchorY"
+          },
+          "dx": {
+            "field": "labelDx"
+          },
+          "align": {
+            "field": "labelAlign"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "fill": {
+            "value": "#111111"
+          },
+          "text": {
+            "field": "name"
+          }
         }
       }
     }
